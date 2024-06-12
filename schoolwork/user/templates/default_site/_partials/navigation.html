@@ -9,15 +9,15 @@
 						<li class="d-none"><a class="text-decoration-none text-uppercase" href="index.html">Home</a></li>
 						{if root:has_children}
 						<li class="has_nav">
-							<a class="text-decoration-none text-uppercase" href="about.html">{root:title}</a><span class="arrow d-lg-none d-flex align-items-center justify-content-center lh-1"><i class="bi bi-chevron-down"></i></span>
+							<a class="text-decoration-none text-uppercase" href="{root:page_url}">{root:title}</a><span class="arrow d-lg-none d-flex align-items-center justify-content-center lh-1"><i class="bi bi-chevron-down"></i></span>
 							<ul class="nav sub-nav flex-column">
 								{root:children}
-								<li><a class="text-decoration-none" href="#" title="What Sets Us Apart">{child:title}</a></li>
+								<li><a class="text-decoration-none" href="{child:page_url}" title="What Sets Us Apart">{child:title}</a></li>
 								{/root:children}
 							</ul>
 						</li>
 						{if:else}
-						<li><a class="text-decoration-none text-uppercase" href="{root:page_uri}">{root:title}</a></li>
+						<li><a class="text-decoration-none text-uppercase" href="{root:page_url}">{root:title}</a></li>
 						{/if}
 						{/exp:structure:nav_basic}
 					</ul>
