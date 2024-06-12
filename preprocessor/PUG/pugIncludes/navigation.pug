@@ -1,0 +1,55 @@
+//- - let pageLinks = {'Home': 'index', 'About': 'about', 'Services': 'services', 'Case Studies': 'Case Studies', 'Clients': 'clients', 'Courses': 'courses', 'Blog': 'blog', 'Jobs': 'jobs', 'Equity': 'equity', 'Contact': 'contact'}
+//- - let aboutSubLinks = ['What Sets Us Apart', 'Mission & Vision', 'Core Values', 'Company History', 'Our Team', 'News & Events', 'Changemakers Grant', 'Contact Us' ]
+//- - let serviceSubLinks = ['Accountability and Authorizer Supports', 'Developing and Operational Schools', 'Quality Reviews', 'Leadership and Instructional Supports']
+
+- let pageLinks = {'Home': 'index', 'About': 'about', 'Services': 'services', 'Case Studies': '#', 'Clients': '#', 'Courses': '#', 'Blog': '#', 'Jobs': '#', 'Equity': '#', 'Contact': '#'}
+- let aboutSubLinks = {'What Sets Us Apart': '#', 'Mission & Vision': '#', 'Core Values': '#', 'Company History': '#', 'Our Team': 'our team', 'News & Events': 'news & events', 'Changemakers Grant': 'changemakers grant', 'Contact Us': '#'}
+- let serviceSubLinks = ['Accountability and Authorizer Supports', 'Developing and Operational Schools', 'Quality Reviews', 'Leadership and Instructional Supports']
+- let courseSubLinks = {'Charter School Founders': '#', 'Charter School Authorizers': '#'}
+
+mixin navigation()
+    nav#navSite.nav_site.d-none.d-lg-flex.ms-auto.align-items-center(aria-label="Navigation")
+        ul.nav
+            each page, pageLink in pageLinks
+                if pageLink === 'About'
+                    li.has_nav(class=(pageName.replace(/[\W_]/g, ' ').replace(/  /g, ' ').replace(/ /g, "-").toLowerCase() === page) ? "active" : undefined)
+                        a.text-decoration-none.text-uppercase(href=( page === '#') ? '#' : `${page.replace(/ /g, "-").toLowerCase()}.html`)= pageLink
+                        span.arrow.d-lg-none.d-flex.align-items-center.justify-content-center.lh-1 #[i.bi.bi-chevron-down]
+                        ul.nav.sub-nav.flex-column
+                            each subLink, subPage in aboutSubLinks
+                                li
+                                    a.text-decoration-none(class=(currentName === subPage) ? 'active' : undefined, href=(subLink === '#') ? '#' : `${subLink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()}.html`, title= subPage)= subPage
+
+                else if pageLink === 'Services'
+                    li.has_nav(class=(pageName.replace(/[\W_]/g, ' ').replace(/  /g, ' ').replace(/ /g, "-").toLowerCase() === page) ? "active" : undefined)
+                        //- a.text-decoration-none.text-uppercase(href=( page === '#') ? '#' : `${page.replace(/ /g, "-").toLowerCase()}.html`)= pageLink
+                        span.link.text-uppercase= pageLink
+                        span.arrow.d-lg-none.d-flex.align-items-center.justify-content-center.lh-1 #[i.bi.bi-chevron-down]
+                        ul.nav.sub-nav.flex-column
+                            each subPage in serviceSubLinks
+                                li
+                                    a.text-decoration-none(class=(currentName === subPage) ? 'active' : undefined, href=`${subPage.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()}.html`, title= subPage)= subPage
+
+                else if pageLink === 'Courses'
+                    li.has_nav(class=(pageName.replace(/[\W_]/g, ' ').replace(/  /g, ' ').replace(/ /g, "-").toLowerCase() === page) ? "active" : undefined)
+                        //- a.text-decoration-none.text-uppercase(href=( page === '#') ? '#' : `${page.replace(/ /g, "-").toLowerCase()}.html`)= pageLink
+                        span.link.text-uppercase= pageLink
+                        span.arrow.d-lg-none.d-flex.align-items-center.justify-content-center.lh-1 #[i.bi.bi-chevron-down]
+                        ul.nav.sub-nav.flex-column
+                            each subLink,  subPage in courseSubLinks
+                                li
+                                    a.text-decoration-none(class=(currentName === subPage) ? 'active' : undefined, href=(subLink === '#') ? '#' : `${subPage.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()}.html`, title= subPage)= subPage
+
+                else
+                    li(class=(pageName.replace(/[\W_]/g, ' ').replace(/  /g, ' ').replace(/ /g, "-").toLowerCase() === page) ? "active" : undefined, class=(pageLink === 'Home') ? 'd-none' : undefined )
+                        a.text-decoration-none.text-uppercase(href=( page === '#') ? '#' : `${page.replace(/ /g, "-").toLowerCase()}.html`)= pageLink
+
+
+//- - let pageLinks = {'Home': 'index', 'About': 'about', 'Services': 'services', 'Case Studies': '#', 'Clients': '#', 'Courses': '#', 'Blog': '#', 'Jobs': '#', 'Equity': '#', 'Contact': '#'};
+
+//- mixin navigation()
+//-     nav#navSite.nav_site.d-none.d-lg-flex.ms-auto.align-items-center(aria-label="Navigation")
+//-         ul.nav
+//-             each page, pageLink in pageLinks
+//-                 li(class=(pageName.replace(/[\W_]/g, ' ').replace(/  /g, ' ').replace(/ /g, "-").toLowerCase() === page) ? "active" : undefined, class=(pageLink === 'Home') ? 'd-lg-none' : undefined )
+//-                     a.text-decoration-none.text-uppercase(href=( page === '#') ? '#' : `${page}.html`)= pageLink

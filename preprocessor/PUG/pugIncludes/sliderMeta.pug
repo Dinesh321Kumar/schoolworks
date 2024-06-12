@@ -1,0 +1,24 @@
+
+mixin sliderMeta(h2, more = undefined, white = undefined, h3 = undefined)
+    section.partners.py-5(class=(white === 'bg-white') ? 'bg-white' : undefined)
+        .container
+            if h3
+                h2.text-center= h2
+                h3.p.text-center.mb-5= h3
+            else
+                h2.text-center.mb-5= h2
+            .partners__slider.owl-carousel
+                mixin item(img, h3, p)
+                    .item.text-center.d-flex.flex-column.align-items-center
+                        .img.mb-4.flex-grow-1.d-flex.align-items-end.justify-content-center
+                            img.img-fluid(src="images/"+img+".png", alt="")
+                        h3.fw-bold.mb-2= h3
+                        p= p
+                +item('spp4', 'Baltimore City Public Schools', 'SchoolWorks is working in close partnership with the district leaders of Providence Public Schools to support the redesign of five district schools.')
+                +item('spp5', 'The Bridge Academy, CT', 'SchoolWorks is working alongside the school leadership team of The Bridge Academy in Manchester, CT to support an outcomes-focused improvement initiative as part of a 3-year “Getting to Great” grant.')
+                +item('spp1', 'Baltimore City Public Schools', 'The SchoolWorks team is collaborating with district leaders from City Schools to provide capacity-adding support for the district’s charter school renewal process.')
+                +item('spp4', 'Baltimore City Public Schools', 'SchoolWorks is working in close partnership with the district leaders of Providence Public Schools to support the redesign of five district schools.')
+
+            if more
+                .cta-more.mt-4.text-center
+                    a.cta.text-white.text-decoration-none.text-uppercase.d-inline-flex.orange-bg(href="#") SEE MORE COLLABORATIONS

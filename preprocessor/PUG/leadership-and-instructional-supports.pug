@@ -1,0 +1,119 @@
+
+- let siteBranch = 'SchoolWorks';
+- let pageName = 'Services';
+- let currentName = 'Leadership and Instructional Supports';
+- let pageTitle = siteBranch + ' | ' + pageName + ' - ' + currentName
+
+include pugIncludes/pageHero.pug
+include pugIncludes/abilities.pug
+
+doctype html
+html(lang="en")
+    include pugIncludes/head.pug
+    +head(pageTitle)
+
+    body
+        include pugIncludes/header.pug
+        +header()
+
+        +pageHero('services', 'lime', pageName, currentName, 'purple')
+
+        section.sec.content
+            .container
+                .row.justify-content-between
+                    .col-md-9
+                        h2.purple-text Your Partner in School Improvement
+                        p #[strong Since 1998, SchoolWorks has worked directly with state departments of education, school districts of all sizes, and thousands of individual schools to support evidence-based, needs-aligned school improvement.] Our improvement supports are aligned to proven school improvement and turnaround frameworks and focus on outcome-driven action.
+                        h2.purple-text.mt-5.pt-md-5 SchoolWorks School Improvement Supports
+
+                        .meta-content
+                            .row.mt-4
+                                .col-auto
+                                    .icon.d-flex.justify-content-center
+                                        img(src="images/diagnostic-icon.svg", alt="")
+                                .col
+                                    p #[strong.d-block Diagnostic Review] SchoolWorks conducts a diagnostic review to assess the current state of the school. The review culminates in a written report of findings that identifies strengths and areas of need.
+                            .row.mt-4
+                                .col-auto
+                                    .icon.d-flex.justify-content-center
+                                        img(src="images/improvement-planning-icon.svg", alt="")
+                                .col
+                                    p #[strong.d-block Improvement Planning] Using review findings, SchoolWorks leads school stakeholders through a step-by-step planning process. The resulting improvement plan specifies evidence-based, measurable strategies to improve performance.
+                            .row.mt-4
+                                .col-auto
+                                    .icon.d-flex.justify-content-center
+                                        img(src="images/needs-aligned-icon.svg", alt="")
+                                .col
+                                    p #[strong.d-block Needs-Aligned Interventions] SchoolWorks provides coaching to the school team informed by the benchmarks of the plan. In most cases, the coach also oversees instructional training.
+
+                            .row.mt-4
+                                .col-auto
+                                    .icon.d-flex.justify-content-center
+                                        img(src="images/progress-monitoring-icon.svg", alt="")
+                                .col
+                                    p #[strong.d-block Progress Monitoring] SchoolWorks provides insight into progress through coaching and periodic monitoring visits. In multi-year partnerships, findings from monitoring visits are used to refine the improvement plan and intensify action.
+
+                    .col-md-auto.d-none.d-lg-block
+                        .side-links
+                            h2.p.text-uppercase.fw-bold.fs-6.mb-4 SERVICES
+                            ul.nav.flex-column.service-link.purple
+                                each slink, serPage in {'School Improvement': '#', 'Diagnostic Review': '#', 'Improvement Planning': '#', 'Needs-Aligned Interventions': '#', 'Leadership Supports': '#', 'Instructional Supports':'#', 'Progress Monitoring': '#'}
+                                    if serPage === 'Improvement Planning'
+                                        li
+                                            a.text-decoration-none(href=(slink === '#') ? '#' : slink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()+".html", class=serPage === 'State Agencies Overseeing Authorizers/Sponsors' ? 'active' : undefined, title=serPage)= serPage
+                                            ul.sub.mt-3.ps-4(style="list-style-type: disc;")
+                                                each li in ['Multi-Year Strategic Planning', '1-Year Action Planning Prioritization']
+                                                    li.mb-2.fs-6= li
+                                    if serPage === 'Leadership Supports'
+                                        li
+                                            a.text-decoration-none(href=(slink === '#') ? '#' : slink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()+".html", class=serPage === 'State Agencies Overseeing Authorizers/Sponsors' ? 'active' : undefined, title=serPage)= serPage
+                                            ul.sub.mt-3.ps-4(style="list-style-type: disc;")
+                                                each li in ['Leadership Coaching', 'Talent Recruitment and Search']
+                                                    li.mb-2.fs-6= li
+                                    if serPage === 'Instructional Supports'
+                                        li
+                                            a.text-decoration-none(href=(slink === '#') ? '#' : slink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()+".html", class=serPage === 'State Agencies Overseeing Authorizers/Sponsors' ? 'active' : undefined, title=serPage)= serPage
+                                            ul.sub.mt-3.ps-4(style="list-style-type: disc;")
+                                                each li in ['Observation and Feedback', 'Learning Walks', 'Professional Development']
+                                                    li.mb-2.fs-6= li
+                                    else
+                                        li
+                                            a.text-decoration-none(href=(slink === '#') ? '#' : slink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()+".html", class=serPage === 'School Improvement' ? 'active' : undefined, title=serPage)= serPage
+
+        section.testimonials.sec.purple-bg
+            .container.text-center
+                .quote
+                    p.comment “Our partnership with SchoolWorks has resulted in a great deal of measurable progress. Our school team looks forward to the continued impact of this ongoing work."
+                    p.name.mt-4.mb-0 Philip O'Reilly
+                    p.role.text-uppercase.fw-normal Executive Director, Odyssey Community School
+                .quote.mt-5.pt-2
+                    p.comment "Working with SchoolWorks has been a wonderful experience all around. I look forward to continuing to work with SchoolWorks in the future."
+                    p.name.mt-4.mb-0 Martina Baker
+                    p.role.text-uppercase.fw-normal COO, Finn Academy
+                .cta-more.mt-5.text-center
+                    a.cta.text-white.text-decoration-none.text-uppercase.d-inline-flex.orange-bg(href="#") DOWNLOAD CASE STUDY
+
+        section.sec.abilities.my-0
+            .container
+                h2.purple-text.text-uppercase.text-center.mb-md-2 Why Choose SchoolWorks?
+                .row
+                    -let abilityColor = ['olive', 'orange', 'mango']
+                    -let abilityIcon = ['educators-dark', 'data-driven', 'focus-alignment']
+                    -let abilityTitle = ['Educators First', 'Data-Driven Approach', 'Focus and Alignment']
+                    -let abilityText = ['SchoolWorks team members are skilled educators with extensive real-world experience in schools and districts.', 'We use quantitative and qualitative data to help schools identify and strategize around key areas of need.', 'We collaborate with schools to ensure that improvement initiatives are fully aligned to state and district frameworks.']
+
+                    -for(let i=0; i < 3; i++){
+                        .col-md-4.mt-5.mt-md-0
+                            +abilityBox(abilityColor[i], abilityIcon[i], abilityTitle[i], abilityText[i])
+                    -}
+
+        section.sec.jumbo.purple-bg.text-center
+            .container
+                h2.text-white.mb-4 Get Started Today
+                p.mb-0.fw-normal Ready to elevate teaching and learning in your school or district?
+                p #[strong Contact SchoolWorks today to learn more about our instructional support services. Let's transform education together.]
+                .cta-more.mt-4.text-center
+                    a.cta.purple-text.text-decoration-none.text-uppercase.d-inline-flex.bg-white(href="#") Contact Schoolworks Today
+
+        include pugIncludes/footer.pug
+        +footer()

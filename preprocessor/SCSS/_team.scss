@@ -1,0 +1,88 @@
+.team {
+	&__box {
+		height: 100%;
+
+		.img {
+			height: 232px;
+			width: 232px;
+
+			img {
+				height: 90%;
+				width: 90%;
+			}
+		}
+
+		h2 {
+			font-size: 18px;
+		}
+
+		h3 {
+			font-size: 14px;
+			font-weight: 400;
+		}
+	}
+}
+
+.modal_team {
+	.modal-dialog {
+		max-width: 1064px;
+	}
+
+	.modal-content {
+		background: #fff;
+		border: 0 none;
+		border-radius: 0;
+		border-top: 1.5rem solid transparent;
+		min-height: 300px;
+
+		.img {
+			height: 232px;
+			width: 232px;
+
+			img {
+				height: 90%;
+				width: 90%;
+			}
+		}
+
+		h2 {
+			font-size: 28px;
+			font-weight: 800;
+		}
+
+		h3 {
+			font-size: 18px;
+			font-weight: 400;
+		}
+
+		.meet {
+			p {
+				font-size: 16px;
+			}
+
+			.social {
+				li {
+					margin-inline: 5px;
+					a {
+						background: grey;
+						width: 35px;
+						height: 35px;
+
+						font-size: 18px;
+					}
+				}
+			}
+		}
+	}
+
+	.btn-close {
+		background: $grey;
+		color: #fff;
+		font-size: 18px;
+		line-height: 1;
+		opacity: 1;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+	}
+}

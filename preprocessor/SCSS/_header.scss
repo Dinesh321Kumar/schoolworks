@@ -1,0 +1,20 @@
+.header {
+	padding-block: 1rem;
+	position: relative;
+	z-index: 100;
+
+	@media (min-width: 768px) {
+		padding-block: 1.5rem 1rem;
+	}
+
+	@media (max-width: 767px) {
+		.brand {
+			img {
+				height: 30px;
+				width: auto;
+			}
+		}
+	}
+	@import 'navigation';
+	@import 'navIcon';
+}

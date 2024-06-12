@@ -1,0 +1,109 @@
+
+- let siteBranch = 'SchoolWorks';
+- let pageName = 'Services';
+- let currentName = 'Developing and Operational Schools';
+- let pageTitle = siteBranch + ' | ' + pageName + ' - ' + currentName
+
+include pugIncludes/pageHero.pug
+include pugIncludes/abilities.pug
+
+doctype html
+html(lang="en")
+    include pugIncludes/head.pug
+    +head(pageTitle)
+
+    body
+        include pugIncludes/header.pug
+        +header()
+
+        +pageHero('services', 'lime', pageName, currentName, 'orange')
+
+        section.sec.content
+            .container
+                .row.justify-content-between
+                    .col-md-9
+                        h2.orange-text A Trusted Support Partner for Charter Schools
+                        p #[strong At SchoolWorks, we understand the unique challenges and opportunities that come with developing and operating charter schools.] Whether you're in the process of launching a new school or seeking to enhance the performance of an existing one, our tailored support services are here to empower you and your team every step of the way.
+                        h2.orange-text.mt-5.pt-md-5 We Support Charter Schools
+
+                        .meta-content
+                            .row.mt-4
+                                .col-auto
+                                    .icon.d-flex.justify-content-center
+                                        img(src="images/school-icon.svg", alt="")
+                                .col
+                                    p #[strong.d-block New School Developers] SchoolWorks supports new school developers with charter application writing, community needs assessments, grant writing, pre-opening coaching, and more.
+                            .row.mt-4
+                                .col-auto
+                                    .icon.d-flex.justify-content-center
+                                        img(src="images/incubator-icon.svg", alt="")
+                                .col
+                                    p #[strong.d-block Incubators and Associations] SchoolWorks provides training, coaching, and hands-on support to new school founders within fellowship programs.
+                            .row.mt-4
+                                .col-auto
+                                    .icon.d-flex.justify-content-center
+                                        img(src="images/operational-icon.svg", alt="")
+                                .col
+                                    p #[strong.d-block Operational Charter Schools] SchoolWorks helps operational charter schools improve student outcomes and enhance organizational effectiveness.
+
+                    .col-md-auto.d-none.d-lg-block
+                        .side-links
+                            h2.p.text-uppercase.fw-bold.fs-6.mb-4 SERVICES
+                            ul.nav.flex-column.service-link.orange
+                                each slink, serPage in {'New School Developers': '#', 'Charter Application Writing': '#', 'Community Needs Assessments': '#', 'CSP Grant Writing': '#', 'Online Training': '#', 'Pre-Opening Coaching':'#'}
+                                    li
+                                        a.text-decoration-none(href=(slink === '#') ? '#' : slink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()+".html", class=serPage === 'New School Developers' ? 'active' : undefined, title=serPage)= serPage
+
+                            ul.nav.flex-column.service-link.orange.mt-5
+                                each slink, serPage in {'Incubators and Associations': '#', 'Pipeline Development': '#', 'Coaching for Fellowship Programs':'#'}
+                                    li
+                                        a.text-decoration-none(href=(slink === '#') ? '#' : slink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()+".html", class=serPage === 'Incubators and Associations' ? 'active' : undefined, title=serPage)= serPage
+
+
+                            ul.nav.flex-column.service-link.orange.mt-5
+                                each slink, serPage in {'Operational Charter Schools': '#', 'Renewal Supports': '#', 'Charter Revisions and Amendments':'#', 'Board Training':'#'}
+                                    if serPage === 'Renewal Supports'
+                                        li
+                                            a.text-decoration-none(href=(slink === '#') ? '#' : slink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()+".html", class=serPage === 'State Agencies Overseeing Authorizers/Sponsors' ? 'active' : undefined, title=serPage)= serPage
+                                            ul.sub.mt-3.ps-4(style="list-style-type: disc;")
+                                                each li in ['Pre-Renewal Review/Action Planning', 'Board-Level Renewal Planning', 'Renewal Application Writing', 'Virtual Mock Renewal Interviews']
+                                                    li.mb-2.fs-6= li
+                                    else
+                                        li
+                                            a.text-decoration-none(href=(slink === '#') ? '#' : slink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()+".html", class=serPage === 'Operational Charter Schools' ? 'active' : undefined, title=serPage)= serPage
+
+        section.testimonials.sec.orange-bg
+            .container.text-center
+                .quote
+                    p.comment “SchoolWorks was instrumental in the development and successful approval of our six charter school applications. Their work brought coherence and focus that resulted in a strong academic program supported by research and best practice that was also grounded in operational and financial stability.”
+                    p.name.mt-4.mb-0 Kristi Baird
+                    p.role.text-uppercase.fw-normal Executive Director, Compass Charter Schools
+                .quote.mt-5.pt-2
+                    p.comment “We are grateful to the SchoolWorks team for their support though this process. While our staff focused on the day-to-day operations of the school, it was a relief to have reliable and experienced help in preparing the renewal application. The mock site visit helped our team know what to expect during the renewal visit."
+                    p.name.mt-4.mb-0 Stephanie Valle
+                    p.role.text-uppercase.fw-normal Executive Director, KIPP: Tech Valley Charter School
+
+        section.sec.abilities.my-0
+            .container
+                h2.orange-text.text-uppercase.text-center.mb-md-2 Why Choose SchoolWorks?
+                .row
+                    -let abilityColor = ['olive', 'blue', 'mango']
+                    -let abilityIcon = ['experience', 'expertise-grey', 'solution']
+                    -let abilityTitle = ['Experience', 'Expertise', 'Tailored Solutions']
+                    -let abilityText = ['SchoolWorks has helped launch more than 100 charter schools. Our specialists work closely with authorizers, associations, incubators, developers, and operators to ensure high-quality options.', 'Our team members have supported the creation of dozens upon dozens of new school and renewal applications by writing, managing, or coaching school developers.', 'We understand that every school and situation is unique. We tailor our solutions to meet the specific needs, goals, and challenges of our partners and provide personalized hands-on support.']
+
+                    -for(let i=0; i < 3; i++){
+                        .col-md-4.mt-5.mt-md-0
+                            +abilityBox(abilityColor[i], abilityIcon[i], abilityTitle[i], abilityText[i])
+                    -}
+
+        section.sec.jumbo.orange-bg.text-center
+            .container
+                h2.text-white.mb-4 Get Started Today
+                p.mb-0.fw-normal Ready to take your new or operational charter school to the next level?
+                p #[strong Contact us today to learn more about how SchoolWorks can support you on your journey.]
+                .cta-more.mt-4.text-center
+                    a.cta.orange-text.text-decoration-none.text-uppercase.d-inline-flex.bg-white(href="#") Contact Schoolworks Today
+
+        include pugIncludes/footer.pug
+        +footer()

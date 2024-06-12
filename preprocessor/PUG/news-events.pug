@@ -1,0 +1,78 @@
+
+- let siteBranch = 'SchoolWorks';
+- let pageName = 'About';
+- let currentName = 'News & Events';
+- let pageTitle = siteBranch + ' | ' + currentName
+
+include pugIncludes/pageHero.pug
+include pugIncludes/abilities.pug
+include pugIncludes/connect.pug
+
+doctype html
+html(lang="en")
+    include pugIncludes/head.pug
+    +head(pageTitle)
+
+    body
+        include pugIncludes/header.pug
+        +header()
+
+        +pageHero('news-events', 'mango', currentName)
+
+        section.sec.content
+            .container
+                .row.justify-content-xl-between
+                    .col-md-9
+                        .img.announcing
+                            a(href="#")
+                                img.img-fluid(src="images/announce1.svg", alt="")
+                    .col-md-auto.d-none.d-md-block
+                        .side-links
+                            ul.nav.flex-column
+                                each clink, plink in {'News & Events': 'mango', 'Changemakers Grant': 'orange', 'Our Team': 'olive', 'About': 'grey'}
+                                    li(class=clink+"-text")
+                                        a.text-decoration-none(href=plink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()+".html")= plink
+                .webinar.mt-5
+                    h2.forest-text.mb-0 Join Our Next Free Webinar
+                    p.date January 30, 2024 @ 1:00 PM EST
+
+                    h3.fst-italic Framingham Public Schools Rejuvenated Instructional Framework & District-Level Strategic Plan
+                    p Discover the secrets behind Framingham Public Schools' remarkable transformation! Learn directly from the experts as they delve into the innovative strategies and best practices that propelled Framingham Public Schools to new heights of success. Gain valuable insights into their rejuvenated instructional framework and district-level strategic plan, designed to enhance student learning outcomes while supporting the professional growth of educators and school leaders.
+
+                    h4.text-uppercase.mb-0 Panelists:
+                    ul.list-unstyled
+                        li #[strong Dr. Robert Tremblay:] Superintendent of Framingham Public Schools
+                        li #[strong Amy Bright:] Assistant Superintendent of PreK – 12 Education of Framingham Public Schools
+                        li #[strong Marybeth O’Brien:] Director of Curriculum, Instruction + Assessment, Framingham Public Schools
+                    a.cta.text-white.text-decoration-none.text-uppercase.d-inline-flex.mt-4.forest-bg(href="#") Register Now to Secure Your Spot!
+
+        section.sec.py-0
+            .container
+                hr.my-0
+
+        section.sec.abilities.my-0
+            .container
+                .row
+                    -let abilityColor = ['olive', 'orange', 'purple']
+                    -let abilityIcon = ['missing', 'feedback', 'newsletter']
+                    -let abilityTitle = ['MISS SOMETHING?', 'SHARE FEEDBACK', 'INSIDER NEWS']
+                    -let abilityText = ['<strong class="mb-2 d-block">Watch recordings of past events you missed.</strong>', '<strong class="d-block"> By sharing your experiences, perspectives and suggestions</strong> you can help us identify areas for improvement and implement meaningful initiatives that benefit students everywhere.', '<strong class="d-block"> Sign up here</strong> to receive Schoolworks’ quarterly newsletter. You can also click below to access the latest edition of our newsletter.']
+                    -let abilityCTA = ['WATCH NOW', 'TAKE SURVEY', 'Sign Up']
+                    -let abilityCTAAfter = [' ', ' ', 'GET LATEST EDITION']
+
+                    -for(let i=0; i < 3; i++)
+                        .col-md-4.mt-5.mt-md-0
+                            +abilityBox(abilityColor[i], abilityIcon[i], abilityTitle[i], abilityText[i], abilityCTA[i], abilityCTAAfter[i])
+
+        section.sec.jumbo.orange-bg.text-center
+            .container
+                .icon.mb-3
+                    img(src="images/grant-icon.svg", alt="", width="94", height="64")
+                h2.text-white.text-uppercase.mb-4 Schoolworks Changemakers Grant
+                p Each quarter, SchoolWorks provides a $5,000 grant award to a team of educators seeking to advance student learning and well-being through an impact-focused initiative. Grant funds may be used to support a broad range of activities including student wellness efforts, academic or enrichment programming, school supplies, goods or services for students in need, professional development, professional services, SchoolWorks online courses, and more.  
+                .cta-more.mt-4.text-center
+                    a.cta.text-white.text-decoration-none.text-uppercase.d-inline-flex.border-white.border.border-1(href="#") FIND OUT MORE – APPLY HERE
+        +connect
+
+        include pugIncludes/footer.pug
+        +footer()

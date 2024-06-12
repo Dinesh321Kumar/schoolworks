@@ -1,0 +1,68 @@
+.values {
+	&__list {
+		.box {
+			border-top: 1px solid rgba($grey, 0.3);
+			cursor: pointer;
+			padding-block: 30px 20px;
+			position: relative;
+
+			@media (min-width: 768px) {
+				border-top: 0 none;
+				padding-block: 0;
+			}
+
+			.icon {
+				height: 75px;
+				transform-origin: center top;
+				transition: transform 0.3s ease;
+				width: 75px;
+			}
+
+			h2 {
+				font-size: 14px;
+				font-weight: 700;
+			}
+
+			&__content {
+				opacity: 0;
+				pointer-events: none;
+				position: absolute;
+				top: 100%;
+				transition: all 0.3s ease;
+				width: 400px;
+
+				h2 {
+					font-size: 18px;
+				}
+			}
+
+			@media (min-width: 768px) {
+				&.over,
+				&:hover {
+					.icon {
+						transform: scale(1.75);
+					}
+
+					h2 {
+						opacity: 0;
+					}
+				}
+			}
+		}
+	}
+
+	&__content {
+		background: rgba($grey, 0.08);
+		margin-bottom: -4rem;
+		margin-top: 2rem;
+
+		.copy-value {
+			display: none;
+			padding-block: 3rem;
+
+			h2 {
+				font-size: 18px;
+			}
+		}
+	}
+}

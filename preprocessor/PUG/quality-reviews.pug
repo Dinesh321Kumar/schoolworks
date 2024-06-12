@@ -1,0 +1,103 @@
+
+- let siteBranch = 'SchoolWorks';
+- let pageName = 'Services';
+- let currentName = 'Quality Reviews';
+- let pageTitle = siteBranch + ' | ' + pageName + ' - ' + currentName
+
+include pugIncludes/pageHero.pug
+include pugIncludes/abilities.pug
+
+doctype html
+html(lang="en")
+    include pugIncludes/head.pug
+    +head(pageTitle)
+
+    body
+        include pugIncludes/header.pug
+        +header()
+
+        +pageHero('services', 'lime', pageName, currentName, 'blue')
+
+        section.sec.content
+            .container
+                .row.justify-content-between
+                    .col-md-9
+                        h2.blue-text Your Trusted Partner in Quality Reviews
+                        p #[strong As a leading provider of school quality reviews, SchoolWorks specializes in comprehensive evaluations that empower schools and districts to reach their full potential.] Our team of experienced educators collaborates closely with stakeholders to conduct thorough evaluations, identify areas for improvement, and develop tailored strategies for sustainable growth.
+                        h2.blue-text.mt-5.pt-md-5 Our Reviews Foster Improvement
+
+                        .meta-content
+                            .row.mt-4
+                                .col-auto
+                                    .icon.d-flex.justify-content-center
+                                        img(src="images/evidence-icon.svg", alt="")
+                                .col
+                                    p #[strong.d-block Evidence-Based] SchoolWorks reviews assess the effectiveness of school programs and practices against a research-based set of standards linked to positive student outcomes.
+                            .row.mt-4
+                                .col-auto
+                                    .icon.d-flex.justify-content-center
+                                        img(src="images/analysis-orange-icon.svg", alt="")
+                                .col
+                                    p #[strong.d-block Data-Driven] Our site visit teams collect and triangulate quantitative and qualitative data to help schools identify and strategize around key areas of need.
+                            .row.mt-4
+                                .col-auto
+                                    .icon.d-flex.justify-content-center
+                                        img(src="images/aligned-icon.svg", alt="")
+                                .col
+                                    p #[strong.d-block Aligned to Accountability Frameworks] We collaborate with our partners to ensure that reviews are fully aligned to state, district and/or authorizer accountability frameworks.
+
+                            .row.mt-4
+                                .col-auto
+                                    .icon.d-flex.justify-content-center
+                                        img(src="images/improvement-icon.svg", alt="")
+                                .col
+                                    p #[strong.d-block Improvement-Focused] SchoolWorks reviews serve as a springboard for improvement planning. In most cases, our reviews are immediately followed by an action-planning session that results in immediate next steps for school teams.
+
+                    .col-md-auto.d-none.d-lg-block
+                        .side-links
+                            h2.p.text-uppercase.fw-bold.fs-6.mb-4 SERVICES
+                            ul.nav.flex-column.service-link.blue
+                                each slink, serPage in {'For State Departments of Education, Districts, Networks, Authorizers, and Schools': '#', 'School, District, and Network Reviews': '#', 'Special Education Reviews': '#', 'Organizational Assessments': '#', 'Equity Audits': '#', 'Personalized Learning Reviews':'#'}
+                                    li
+                                        a.text-decoration-none(href=(slink === '#') ? '#' : slink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()+".html", class=serPage === 'For State Departments of Education, Districts, Networks, Authorizers, and Schools' ? 'active' : undefined, title=serPage)= serPage
+
+                            ul.nav.flex-column.service-link.blue.mt-5
+                                each slink, serPage in {'For Education Agencies and Funders': '#', 'Grant Evaluation':'#'}
+                                    li
+                                        a.text-decoration-none(href=(slink === '#') ? '#' : slink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()+".html", class=serPage === 'For Education Agencies and Funders' ? 'active' : undefined, title=serPage)= serPage
+
+        section.testimonials.sec.blue-bg
+            .container.text-center
+                .quote
+                    p.comment “This report is strikingly accurate. I am pleased that the report captured so much of what we are doing while also identifying the needs we have. As the superintendent, I am grateful these needs were verified by outside educators; it gives me leverage for improvement. Please pass on my gratitude to the reviewers; their ability to get to the core of our school in only two days is phenomenal.”
+                    p.name.mt-4.mb-0 Justin Cowan
+                    p.role.text-uppercase.fw-normal Superintendent, Aguilar Schools, CO
+                .quote.mt-5.pt-2
+                    p.comment “I was concerned that [SchoolWorks] would not be able to capture our school’s culture in a two-day period, but much to my surprise the team shared an accurate picture of who we are. In addition, they provided data to support our hunches of areas that we needed to improve and/or strengthen. We thank the SchoolWorks team for validating for us many of the practices that we do well."
+                    p.name.mt-4.mb-0 Sandra Stuart
+                    p.role.text-uppercase.fw-normal Principal, George J. West Elementary, RI
+
+        section.sec.abilities.my-0
+            .container
+                h2.blue-text.text-uppercase.text-center.mb-md-2 Why Choose SchoolWorks?
+                .row
+                    -let abilityColor = ['olive', 'orange', 'mango']
+                    -let abilityIcon = ['trusted', 'educators-dark', 'focus']
+                    -let abilityTitle = ['Trusted and Approved', 'Educators First', 'Focused on Impact']
+                    -let abilityText = ['SchoolWorks is a qualified turnaround and <span class="olive-text">improvement partner</span> approved by multiple state departments of education, districts, and agencies.', 'Our trained site visit team members are all former educators and administrators. Their real-world experience in schools helps connect with school stakeholders during the review process.', 'By identifying strengths, addressing areas for growth, and fostering a culture of continuous improvement, our quality reviews empower educators to enhance their effectiveness and foster change.']
+
+                    -for(let i=0; i < 3; i++){
+                        .col-md-4.mt-5.mt-md-0
+                            +abilityBox(abilityColor[i], abilityIcon[i], abilityTitle[i], abilityText[i])
+                    -}
+
+        section.sec.jumbo.blue-bg.text-center
+            .container
+                h2.text-white.mb-4 Get Started Today
+                p.mb-0.fw-normal Ready to take your new or operational charter school to the next level?
+                p #[strong Contact us today to learn more about how SchoolWorks can support you on your journey.]
+                .cta-more.mt-4.text-center
+                    a.cta.blue-text.text-decoration-none.text-uppercase.d-inline-flex.bg-white(href="#") Contact Schoolworks Today
+
+        include pugIncludes/footer.pug
+        +footer()

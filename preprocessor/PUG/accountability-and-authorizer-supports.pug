@@ -1,0 +1,96 @@
+
+- let siteBranch = 'SchoolWorks';
+- let pageName = 'Services';
+- let currentName = 'Accountability and Authorizer Supports';
+- let pageTitle = siteBranch + ' | ' + pageName + ' - ' + currentName
+
+include pugIncludes/pageHero.pug
+include pugIncludes/abilities.pug
+
+doctype html
+html(lang="en")
+    include pugIncludes/head.pug
+    +head(pageTitle)
+
+    body
+        include pugIncludes/header.pug
+        +header()
+
+        +pageHero('services', 'lime', pageName, currentName, 'olive')
+
+        section.sec.content
+            .container
+                .row.justify-content-between
+                    .col-md-9
+                        h2.olive-text Your Partner in Accountability and Authorizer Supports
+                        p #[strong At SchoolWorks, we understand the critical role authorizers play in the educational landscape.] Our services are designed to provide comprehensive support tailored to meet your unique needs.
+                        h2.olive-text.mt-5.pt-md-5 We Support Charter School Authorizers
+                        .meta-content
+                            .row.mt-4
+                                .col-auto
+                                    .icon.d-flex.justify-content-center
+                                        img(src="images/timer-icon.svg", alt="")
+                                .col
+                                    p #[strong.d-block Capacity-Adding Support] We support authorizers by managing crucial time-sensitive tasks like renewal site visits and the evaluation of new school applications. Whether you need full process management or simply need the help of our skilled team, our solutions are tailored to your needs.
+                            .row.mt-4
+                                .col-auto
+                                    .icon.d-flex.justify-content-center
+                                        img(src="images/training-icon.svg", alt="")
+                                .col
+                                    p #[strong.d-block Technical Assistance and Training] Our experts deliver training and guidance on all facets of charter school authorizing. We offer in-person training, virtual training, and on-demand professional development across a diverse range of topics.
+                            .row.mt-4
+                                .col-auto
+                                    .icon.d-flex.justify-content-center
+                                        img(src="images/analysis-icon.svg", alt="")
+                                .col
+                                    p #[strong.d-block Performance Analysis and Improvement Planning] To help authorizers improve, we assess performance in alignment with best practices and national standards. Using evidence-based insights, our experts collaborate with authorizers to devise and implement effective strategies to improve efficiency, transparency, and outcomes.
+
+                    .col-md-auto.d-none.d-lg-block
+                        .side-links
+                            h2.p.text-uppercase.fw-bold.fs-6.mb-4 SERVICES
+                            ul.nav.flex-column.service-link.olive
+                                each slink, serPage in {'Authorizers': '#', 'Oversight and Monitoring Services': '#', 'Needs Assessment / Strategic Planning': '#', 'Resource Development': '#', 'Third Party Application Evaluation': '#', 'Third Party Site Visits: Renewal': '#', 'Third Party Site Visits: Oversight': '#', 'School Closure Stewardship': '#', 'Technical Support and Training':'#'}
+                                    li
+                                        a.text-decoration-none(href=(slink === '#') ? '#' : slink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()+".html", class=serPage === 'Authorizers' ? 'active' : undefined, title=serPage)= serPage
+
+                            ul.nav.flex-column.service-link.olive.mt-5
+                                each slink, serPage in {'State Agencies Overseeing Authorizers/Sponsors': '#', 'Resource Development': '#', 'Third Party Authorizer Reviews':'#'}
+                                    li
+                                        a.text-decoration-none(href=(slink === '#') ? '#' : slink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()+".html", class=serPage === 'State Agencies Overseeing Authorizers/Sponsors' ? 'active' : undefined, title=serPage)= serPage
+
+        section.testimonials.sec.olive-bg
+            .container.text-center
+                .quote
+                    p.comment “SchoolWorks has the ability to zoom out and have an eye on best practices nationwide, yet apply it to the experience of a small state. They were able to make connections appropriate for Rhode Island and our charter sector.”
+                    p.name.mt-4.mb-0 Steve Osborn
+                    p.role.text-uppercase.fw-normal Chief for Innovation, Rhode Island Department of Elementary and Secondary Education
+                .quote.mt-5.pt-2
+                    p.comment “Through our work together, SchoolWorks developed a truly nuanced understanding of the needs of Louisiana’s students. We appreciate the company’s work as a thought partner, its high standards of quality, as well as the high levels of evidence and detail in its recommendations to the Department.”
+                    p.name.mt-4.mb-0 Lauren Perry
+                    p.role.text-uppercase.fw-normal Former Executive Director of Portfolio, Louisiana Department of Education
+
+        section.sec.abilities.my-0
+            .container
+                h2.olive-text.text-uppercase.text-center.mb-md-2 Why Choose SchoolWorks?
+                .row
+                    -let abilityColor = ['orange', 'blue', 'mango']
+                    -let abilityIcon = ['expertise-grey', 'team-grey', 'our-approach-grey']
+                    -let abilityTitle = ['Our Expertise', 'Our Team', 'Our Approach']
+                    -let abilityText = ['SchoolWorks has supported charter school authorizers since 1998. We currently partner with authorizers in over half of the states that have enacted charter school laws.', 'Our team members have extensive professional experience in the charter school sector – serving as authorizers, leading charter school associations, managing charter school incubators, and more.', 'Leveraging our extensive experience and utilizing both state charter school laws and national standards as frameworks, our experts deliver outcome-focused support.']
+
+                    -for(let i=0; i < 3; i++){
+                        .col-md-4.mt-5.mt-md-0
+                            +abilityBox(abilityColor[i], abilityIcon[i], abilityTitle[i], abilityText[i])
+                    -}
+
+
+        section.sec.jumbo.olive-bg.text-center
+            .container
+                h2.text-white.mb-4 Get Started Today
+                p.fw-normal.mb-0 Ready to elevate your authorizing practice?
+                p #[strong Contact us today to learn more about how SchoolWorks can help you achieve your goals and fulfill your mission with confidence.]
+                .cta-more.mt-4.text-center
+                    a.cta.olive-text.text-decoration-none.text-uppercase.d-inline-flex.bg-white(href="#") Contact Schoolworks Today
+
+        include pugIncludes/footer.pug
+        +footer()

@@ -1,0 +1,11 @@
+mixin pageHero(img, color, title, barTitle = undefined, barColor = undefined)
+    section.page_hero(class=color+"-bg")
+        .page_hero__text.container.py-3.py-md-4
+            h1.mb-0.text-white.text-center.text-md-start.lh-1.pb-md-2= title
+        .page_hero__img.text-center
+            img.img-fluid.d-none.d-md-inline-block(src="images/"+img+"-hero.jpg", alt="")
+            img.img-fluid.d-md-none(src="images/"+img+"-mob-hero.jpg", alt="")
+    if barTitle
+        .page_title(class=barColor+"-bg")
+            .container.py-3
+                h1.h2.mb-0.text-white.text-center.text-md-start= barTitle

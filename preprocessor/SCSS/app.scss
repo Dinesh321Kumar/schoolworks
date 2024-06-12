@@ -1,0 +1,31 @@
+@import 'mixins';
+@import 'common';
+@import 'header';
+@import 'heroSlider';
+@import 'pageHero';
+@import 'partners';
+@import 'welcome';
+@import 'abilities';
+@import 'partnersWork';
+@import 'wbe';
+@import 'connect';
+@import 'metaAbout';
+@import 'jumbo';
+@import 'coreValue';
+@import 'companyHistory';
+@import 'team';
+@import 'webinar';
+@import 'formGrant';
+@import 'testimonials';
+@import 'typography';
+@import 'footer';
+
+.container {
+	max-width: 1095px;
+}
+
+body {
+	color: $grey;
+	font-family: $font;
+	text-wrap: pretty;
+}

@@ -1,0 +1,146 @@
+.company-history {
+	@media (max-width: 767px) {
+		overflow: hidden;
+	}
+
+	.time-line {
+		&__year {
+			li {
+				font-size: 14px;
+			}
+		}
+
+		&__year-bar {
+			margin-top: 15px;
+
+			.bar {
+				height: 15px;
+				position: relative;
+
+				.arrow {
+					background: $forest;
+					border-bottom: 7px solid transparent;
+					border-left: 10px solid $orange;
+					border-top: 7px solid transparent;
+					height: 100%;
+					position: absolute;
+					right: 0;
+					top: 0;
+					width: 10px;
+				}
+
+				&:before {
+					background: #fff;
+					bottom: 0;
+					content: '';
+					height: 24px;
+					left: 0;
+					position: absolute;
+					position: absolute;
+					width: 1px;
+				}
+
+				&.active {
+					&:after {
+						border-left: 10px solid transparent;
+						border-right: 10px solid transparent;
+						border-top: 16px solid transparent;
+						content: '';
+						left: 50%;
+						position: absolute;
+						top: 100%;
+						transform: translateX(-50%);
+					}
+				}
+
+				&.mango-bg {
+					&:after {
+						border-top-color: $mango;
+					}
+				}
+
+				&.lime-bg {
+					&:after {
+						border-top-color: $lime;
+					}
+				}
+
+				&.blue-bg {
+					&:after {
+						border-top-color: $blue;
+					}
+				}
+
+				&.orange-bg {
+					&:after {
+						border-top-color: $orange;
+					}
+				}
+			}
+		}
+
+		&__content {
+			.copy {
+				@media (max-width: 767px) {
+					.heading {
+						position: relative;
+						margin-left: -1.5rem;
+						margin-right: -1.5rem;
+
+						h2 {
+							font-size: 28px;
+							font-weight: 700;
+						}
+						&:after {
+							position: absolute;
+							content: '';
+							top: 100%;
+							left: 50%;
+							transform: translateX(-50%);
+							border-top: 14px solid transparent;
+							border-left: 10px solid transparent;
+							border-right: 10px solid transparent;
+						}
+						&.mango-bg {
+							&:after {
+								border-top-color: $mango;
+							}
+						}
+						&.lime-bg {
+							&:after {
+								border-top-color: $lime;
+							}
+						}
+						&.blue-bg {
+							&:after {
+								border-top-color: $blue;
+							}
+						}
+						&.orange-bg {
+							&:after {
+								border-top-color: $orange;
+							}
+						}
+					}
+				}
+
+				h3 {
+					font-size: 20px;
+					font-weight: 700;
+					@media (min-width: 768px) {
+						font-size: 28px;
+					}
+				}
+
+				h3,
+				p {
+					color: #fff;
+				}
+
+				a {
+					color: inherit;
+				}
+			}
+		}
+	}
+}

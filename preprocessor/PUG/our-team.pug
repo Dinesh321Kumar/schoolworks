@@ -1,0 +1,76 @@
+
+- let siteBranch = 'SchoolWorks';
+- let pageName = 'About';
+- let currentName = 'Our Team';
+- let pageTitle = siteBranch + ' | ' + currentName
+
+include pugIncludes/pageHero.pug
+include pugIncludes/userCard.pug
+include pugIncludes/connect.pug
+
+doctype html
+html(lang="en")
+    include pugIncludes/head.pug
+    +head(pageTitle)
+
+    body
+        include pugIncludes/header.pug
+        +header()
+
+        +pageHero('our-team', 'olive', currentName)
+
+        section.sec.content
+            .container
+                .row.justify-content-xl-between
+                    .col-md-9
+                        p #[strong Welcome to the heart of SchoolWorks – our dedicated team of seasoned educators who are committed to empowering student-serving organizations to thrive.] Get to know the faces behind SchoolWorks and discover the depth of talent and dedication that fuels our work every day.
+                    .col-md-auto.d-none.d-md-block
+                        .side-links
+                            ul.nav.flex-column
+                                each clink, plink in {'Our Team': 'olive', 'About': 'grey', 'News & Events': 'mango', 'Changemakers Grant': 'orange'}
+                                    li(class=clink+"-text")
+                                        a.text-decoration-none(href=plink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()+".html")= plink
+
+        section.sec
+            .container-xxl.container
+                .row.team.justify-content-center
+                    - let tC = ['lime', 'olive', 'mango', 'orange', 'purple', 'blue', 'red', 'lime', 'olive', 'mango', 'orange', 'purple'];
+                    - let tP = ['1', '2', '3', '3', '4', '4', '5', '3', '3', '6', '4', '3'];
+                    - let tN = ['Kim Perron', 'Jay Adams', 'Lyn Bajaj', 'Stephanie Bignault', 'David E. Brown', 'Dan Cosgrove', 'Betty Dao-Ivey', 'Michelle Doane', 'Michelle Drumm', 'Chad Fersuson', 'Thomas Franta', 'Yahaira-Maria Frier'];
+                    - let tR = ['President and Owner', 'Managing Director of Quality Reviews','Consultant', 'Special Projects and Marketing Coordinator','Leadership Consultant', 'Assistant Director', 'Managing Director of Leadership Supports', 'Project Manager', 'Project Coordinator', 'Project Manager', 'Managing Director of Accountability and Authorizer Supports', 'Leadership Consultant'];
+                    - for(i = 0; i < 12; i++)
+                        +userCard(4, "tp"+tP[i], tN[i], tR[i], '#', tC[i])
+
+                .cta-more.mt-4.text-center
+                    a.cta.text-white.text-decoration-none.text-uppercase.d-inline-flex.olive-bg(href="#") Meet The Rest of Our Team
+
+        #modalTeam.modal.fade.modal_team(tabindex="-1", aria-labelledby="modalTeamLabel", aria-hidden="true", data-bs-backdrop="static")
+            .modal-dialog.modal-dialog-centered
+                .modal-content.px-4.py-5
+                    button.btn-close.rounded-circle(type="button", data-bs-dismiss="modal", aria-label="Close") &#x2715;
+                    .container
+                        .row
+                            .col-md-auto.pe-md-4
+                                .img.mb-3.align-items-end.d-flex.justify-content-center.overflow-hidden.rounded-circle
+                                   img#imageModal(src="", alt="")
+                                .meet.d-flex.flex-column.text-center.align-items-center
+                                    p.mb-2 Connect with #[span#initialName ]
+                                    .social
+                                        ul.nav
+                                            each social in ['twitter-x', 'instagram', '@']
+                                                if social === '@'
+                                                    li
+                                                        a.lh-1.text-decoration-none.rounded-circle.text-white.d-flex.align-items-center.justify-content-center(href="#")= social
+                                                else
+                                                    li
+                                                        a.lh-1.text-decoration-none.rounded-circle.text-white.d-flex.align-items-center.justify-content-center(href="#") #[i.bi(class=`bi-${social}`)]
+                            #copyModal.col
+                                h2#modalName.mb-0
+                                h3#modalRole.text-uppercase.mb-3
+                                p Kim Perron began her career as an educator in a familiar setting —  her own high school — and with a common first-year teaching experience.   “I taught off a wheeled cart in a high school with three floors,” she  says. “It was a whirlwind introduction to my career in education.”
+                                p Perron’s subsequent experiences provided opportunities for teacher  leadership and “expanded my interests beyond the classroom,” she says.  After returning to Harvard to seek certification as a principal, she  took a position overseeing the charter application and amendment process  at the Massachusetts Department of Elementary and Secondary Education  Charter School Office, followed by another authorizing role at the State  University of New York’s Charter Schools Institute. “SUNY was on the  forefront of authorizing, and a lot of cool stuff was happening in the  charter school movement in New York,” she says, adding that the  experience piqued her interest in “how policies impact the direction and  work of a school.”
+
+        +connect
+
+        include pugIncludes/footer.pug
+        +footer()

@@ -1,0 +1,111 @@
+- let siteBranch = 'SchoolWorks';
+- let pageName = 'Home';
+- let pageTitle = siteBranch + ' | ' + pageName
+
+include pugIncludes/abilities.pug
+include pugIncludes/satisfactory.pug
+include pugIncludes/connect.pug
+include pugIncludes/sliderMeta.pug
+
+doctype html
+html(lang="en")
+    include pugIncludes/head.pug
+    +head(pageTitle)
+
+    body
+        include pugIncludes/header.pug
+        +header()
+
+        section.hero
+            #homeSlider.carousel.slide.carousel-fade(data-bs-ride="carousel", data-bs-interval="4000")
+                .carousel-inner
+                    - for (let i = 1; i <= 3; ++i) {
+                        .carousel-item(class=(i === 1) ? 'active lime-bg' : undefined, class=(i === 2) ? 'blue-bg' : undefined,  class=(i === 3) ? 'orange-bg' : undefined)
+                            .hero__img-wrap.mx-auto
+                                img.d-block.w-100(src="images/hsp"+i+".jpg", alt="...")
+                            .hero__text.container
+                                h2.text-white.mb-2.mb-md-5 Who has the power #[br] to improve education?#[br] #[strong Educators do].
+                                a.cta.text-white.text-decoration-none.text-uppercase.d-inline-flex(href="#") LEARN MORE
+                    - }
+
+        section.welcome.text-center
+            .container
+                .welcome__copy.my-5
+                    h1.mb-4 We are educators, #[strong just like you.]
+                    h2.mb-4 We’ll work collaboratively and tirelessly with your team to make positive change happen.
+                    p SchoolWorks provides objective insights and specialized expertise to help today’s education leaders make informed decisions, implement initiatives effectively, ensure quality and accountability, and manage change successfully—all with the ultimate goal of improving outcomes for students and communities.
+                .welcome__video.d-flex.flex-column.align-items-center
+                    h2.mb-4.text-uppercase.olive-text Welcome to Schoolworks
+                    .video__wrap.position-relative.overflow-hidden.w-100(style="padding-top: 47.5%; max-width:815px;")
+                        iframe.position-absolute.z-5.w-100.h-100.start-0.top-0(src="https://www.youtube.com/embed/P1frWdKZJ8I?si=90US1EXq0w11cA1q", title="YouTube video player", frameborder="0", allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share", referrerpolicy="strict-origin-when-cross-origin", allowfullscreen)
+                .abilities
+                    .row
+                        -let abilityColor = ['olive', 'orange', 'purple']
+                        -let abilityIcon = ['webinar', 'educators', 'laptop']
+                        -let abilityTitle = ['LEARN WITH US', 'MAKE A CHANGE', 'CONNECT WITH US']
+                        -let abilityText = ['<strong class="mb-2 d-block">Join our free upcoming webinar on January 30, 2024 @ 1:00 PM EST.</strong> Framingham Public Schools Rejuvenated Instructional Framework & District-Level Strategic Plan', '<strong class="d-block"> The SchoolWorks Changemakers Grant</strong> is a quarterly mini-grant awarded to a team of educators seeking to advance student learning and well-being through an impact-focused initiative. Find out more or apply.', '<strong class="d-block"> Contact us today</strong> to learn more about how SchoolWorks can collaborate with your team to support your educational goals. We look forward to talking to you.']
+                        -let abilityCTA = ['LEARN MORE', 'FIND OUT MORE', 'CONTACT US']
+                        -let abilityCTAAfter = ['REGISTER NOW', 'APPLY NOW', ' ']
+
+                        -for(let i=0; i < 3; i++){
+                            .col-md-4.mt-5.mt-md-0
+                                +abilityBox(abilityColor[i], abilityIcon[i], abilityTitle[i], abilityText[i], abilityCTA[i], abilityCTAAfter[i])
+                        -}
+
+        section.partners.py-5
+            .container
+                h2.text-center.orange-text.mb-5.text-uppercase Our Education Partners
+                .partners__slider.owl-carousel
+                    mixin item(img, h3)
+                        .item.text-center.d-flex.flex-column.align-items-center
+                            .img.mb-4.flex-grow-1.d-flex.align-items-end.justify-content-center
+                                img.img-fluid(src="images/"+img+".png", alt="")
+                            h3.mb-0= h3
+                    +item('spp1', 'Baltimore City Public Schools')
+                    +item('spp2', 'Cleveland Metropolitan School District')
+                    +item('spp3', 'Colorado Department of Education')
+                    +item('spp1', 'Baltimore City Public Schools')
+
+        +satisfactory
+
+        section.sec.pt-0.partners-work
+            .container
+                h2.text-center.olive-text.text-uppercase We are your partners in the work
+            .container.text-center.text-md-start(style="max-width:792px")
+                mixin partnerWork(color, img, name, role, p)
+                    .row.partners-work__box.mt-5.gx-lg-5.justify-content-center.justify-content-md-start(class= color)
+                        .col-md-auto.frame.d-flex.flex-column.align-items-center.text-center
+                            .img.mb-3.align-items-end.d-flex.justify-content-center.overflow-hidden.rounded-circle
+                                img(src="images/wp"+img+".png", alt="")
+                            .meta
+                                p.mb-0.name.fw-bold= name
+                                p.role.text-uppercase= role
+                        .col-md.mt-4.mt-md-0
+                            a.tag.text-white.text-decoration-none.text-uppercase.d-inline-flex.mb-2(href="#") Read !{name.split(' ')[0]}’s Bio tag
+                            h2 What clients are saying about !{name.split(' ')[0]}
+                            .bar-quote.my-3
+                                .img-quote.px-3.ps-md-3.bg-white.d-inline-flex
+                                    svg(width="60", height="21", viewBox="0 0 60 21", fill="none", xmlns="http://www.w3.org/2000/svg")
+                                        path(d="M53.28 20.46H48.84V15.12H50.52C52.32 15.12 53.58 14.34 53.58 12.96V10.8H48.84V0.599976H59.28V13.5C59.28 17.34 56.7 20.46 53.28 20.46ZM38.46 20.46H34.02V15.12H35.7C37.5 15.12 38.76 14.34 38.76 12.96V10.8H34.02V0.599976H44.46V13.5C44.46 17.34 41.88 20.46 38.46 20.46Z", fill="#F6B74B")
+                                        path(d="M11.1788 20.46H0.73877V7.55998C0.73877 3.71997 3.31877 0.599976 6.73877 0.599976H11.1788V5.93997H9.49877C7.69877 5.93997 6.43877 6.71998 6.43877 8.09998V10.2H11.1788V20.46ZM25.9988 20.46H15.5588V7.55998C15.5588 3.71997 18.1388 0.599976 21.5588 0.599976H25.9988V5.93997H24.3188C22.5188 5.93997 21.2588 6.71998 21.2588 8.09998V10.2H25.9988V20.46Z", fill="#F6B74B")
+                            p.quote.fst-italic= p
+                            .meta
+                                p.mb-0.name.fw-bold Client Name
+                                p.text-uppercase.company Organization
+                +partnerWork('mango', '1', 'Chad Ferguson', 'Project Manager', 'Working with Chad from SchoolWorks has been an absolute game-changer for our school district. His leadership and guidance have been instrumental in helping us develop and implement strategic initiatives that have had a profound impact on our students and staff.')
+                +partnerWork('orange', '2', 'Rebecca Watson', 'Project Manager', 'Rebecca\'s collaborative approach, attention to detail, and exceptional communication skills have not only facilitated the successful implementation of our projects but have also inspired and empowered our team.')
+                +partnerWork('olive', '3', 'Nadia Lofton', 'Director of talent Recruitment & Relationship Management', 'Nadia helped us recruit the right leader for our school community. Her proactiveapproach and commitment to our success have exceeded our expectations.')
+
+        +sliderMeta('Current Collaborations', 'more')
+
+        section.sec.wbe
+            .container.text-center.d-flex.flex-column.align-items-center
+                .img.mb-4
+                    img(src="images/wbenc-logo.png", alt="", width="195", height="110")
+                h2.mb-3 National Certified Women’s Business#[br] Enterprise (WBE)
+                h3 SCHOOLWORKS® is proud to be certified by the Women’s Business Enterprise  National Council as both a Women’s Business Enterprise (WBE) and a  Woman-Owned Small Business (WOSB).
+
+        +connect
+
+        include pugIncludes/footer.pug
+        +footer()

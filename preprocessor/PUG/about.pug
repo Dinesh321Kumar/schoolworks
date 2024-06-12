@@ -1,0 +1,250 @@
+
+- let siteBranch = 'SchoolWorks';
+- let pageName = 'About';
+- let currentName = pageName;
+- let pageTitle = siteBranch + ' | ' + currentName
+
+include pugIncludes/pageHero.pug
+include pugIncludes/satisfactory.pug
+include pugIncludes/connect.pug
+
+doctype html
+html(lang="en")
+    include pugIncludes/head.pug
+    +head(pageTitle)
+
+    body
+        include pugIncludes/header.pug
+        +header()
+
+        +pageHero('about', 'purple', currentName + ' Us')
+
+        section.welcome.text-center.overflow-hidden
+            .container(style="max-width:900px")
+                .welcome__copy.my-5
+                    h2.mb-0.mb-md-4 SchoolWorks provides a unique blend of expertise, personalized attention, and data-driven solutions to support today’s education leaders in driving meaningful change and lasting impact.
+
+                .welcome__links
+                    .row
+                        mixin linkCircle(str, color)
+                            .col-md-4.d-md-flex.justify-content-md-center
+                                a.box.d-flex.flex-column.align-items-center.justify-content-center.p-3.text-white.text-decoration-none(href=`${str.replace(/[\W_] /g, '').replace(' ','-').toLowerCase()}.html`, class=color+"-bg")
+                                    .icon.mb-2.mb-md-3
+                                        img(src=`images/${str.replace(/[\W_] /g, '').replace(' ','-').toLowerCase()}-icon.svg`, alt="")
+                                    p= str
+
+                        +linkCircle('Our Team', 'olive')
+                        +linkCircle('News & Events', 'mango')
+                        +linkCircle('Changemakers Grant', 'orange')
+
+        section.text-center.content.mt-5
+            .container
+                h2.mb-4.text-uppercase.olive-text Our Clients and Services
+                p We partner directly with schools, school districts and networks, state departments of education, charter school authorizers and associations, foundations, school developers, and various educational agencies. To support the ongoing work of our partners, we provide a #[strong broad range of services] across the areas of #[strong Accountability and Authorizer Supports, Quality Reviews, Instructional Supports, Leadership Supports and School Developer Supports.]
+
+        section.meta-about.mt-5
+            .container
+                h2.mb-4.text-uppercase.text-center.olive-text What Sets Us Apart
+                .meta-about__meta.mx-auto
+                    .row.mt-4.gx-lg-5.text-center.text-md-start
+                        .col-md-auto
+                            .icon.d-flex.align-items-center.justify-content-center.mb-3.mb-md-0.mx-auto
+                                img.img-fluid(src="images/expertise-icon.svg", alt="")
+                        .col-md
+                            h2.text-uppercase EXPERTISE
+                            p Our team is made up of skilled educators with extensive experience in various educational settings. We bring a wealth of knowledge and insight to every project, ensuring that our recommendations are grounded in real-world experience and best practices.
+
+                    .row.mt-4.gx-lg-5.text-center.text-md-start
+                        .col-md-auto
+                            .icon.d-flex.align-items-center.justify-content-center.mb-3.mb-md-0.mx-auto
+                                img.img-fluid(src="images/research-icon.svg", alt="")
+                        .col-md
+                            h2.text-uppercase Research-Aligned Services
+                            p Our services are rooted in SchoolWorks Quality Criteria, a comprehensive set of research-based standards identifying effective and high-quality practices associated with positive student outcomes.
+
+                    .row.mt-4.gx-lg-5.text-center.text-md-start
+                        .col-md-auto
+                            .icon.d-flex.align-items-center.justify-content-center.mb-3.mb-md-0.mx-auto
+                                img.img-fluid(src="images/data-icon.svg", alt="")
+                        .col-md
+                            h2.text-uppercase Data-Driven Approach
+                            p We believe in the power of data to inform decision-making and drive improvement. Through comprehensive data collection and analysis, we help our clients identify areas for growth and implement evidence-based strategies for success.
+
+                    .row.mt-4.gx-lg-5.text-center.text-md-start
+                        .col-md-auto
+                            .icon.d-flex.align-items-center.justify-content-center.mb-3.mb-md-0.mx-auto
+                                img.img-fluid(src="images/customized-solutions.svg", alt="")
+                        .col-md
+                            h2.text-uppercase Customized Solutions
+                            p We understand that every organization has distinct challenges and goals. That's why we work closely with our partners to develop tailored solutions that address their specific needs and vision.
+
+                    .row.mt-4.gx-lg-5.text-center.text-md-start
+                        .col-md-auto
+                            .icon.d-flex.align-items-center.justify-content-center.mb-3.mb-md-0.mx-auto
+                                img.img-fluid(src="images/collaborative-icon.svg", alt="")
+                        .col-md
+                            h2.text-uppercase Collaborative Partnership
+                            p We view our clients as partners in a shared journey. By fostering open communication and collaboration, we build strong relationships that enable us to work together effectively towards goals.
+
+                    .row.mt-4.gx-lg-5.text-center.text-md-start
+                        .col-md-auto
+                            .icon.d-flex.align-items-center.justify-content-center.mb-3.mb-md-0.mx-auto
+                                img.img-fluid(src="images/approved-icon.svg", alt="")
+                        .col-md
+                            h2.text-uppercase Approved Provider Status
+                            p SchoolWorks is an approved and pre-qualified service provider in multiple states and districts.
+                            p #[a.full_list.blue-text.fw-bold.fs-6.text-decoration-none(href="#") SEE FULL LIST OF APPROVALS]
+
+        +satisfactory
+
+        section.sec.jumbo.orange-bg.text-center
+            .container
+                .icon.mb-3
+                    img(src="images/target-icon.svg", alt="", width="74", height="74")
+                h2.text-white.text-uppercase.mb-4 MISSION & VISION
+                p SchoolWorks’ mission is to advance all aspects of student learning and well-being by building the capacity of educators and educational institutions to assess, plan for, and achieve student success.
+                p Our vision is to influence and build the abilities of countless educational professionals operating in a variety of educational organizations so that they may have a positive impact on their organizations, student learning, and well-being. SchoolWorks helps educational professionals imagine and do more. This is the SchoolWorks Community of Practice.
+
+        section#coreValues.sec.values.overflow-hidden
+            .container.text-center
+                h2.olive-text.text-uppercase.mb-4 Core Values
+                p.mb-0 To meet the needs of our clients, we approach our work with an understanding of the uniqueness of every student-serving organization. #[strong We adhere to the following core values:]
+
+                .values__list.row.mt-4.mt-md-5
+                    mixin zoomBox(img, h2, color = undefined, h3 = undefined)
+                        .col-md.mt-4.mt-md-0
+                            .box.d-flex.flex-column.text-center.align-items-center(data-value=h2.replace('-', '').replace(',', '').toLowerCase().split(' ')[0])
+                                .icon.align-items-center.d-flex.justify-content-center.mb-2
+                                    img(src="images/"+img+"-icon.svg", alt="")
+                                h2.text-uppercase.mb-0= h2
+                                p.mb-0.d-md-none= h3
+                                .box__content.d-md-none
+                                    h2.text-uppercase(class=color)= h2
+                                    p.mb-0= h3
+                    +zoomBox('accountability', 'Accountability', 'lime-text', 'We believe accountability for results is an essential component of every successful organization.')
+                    +zoomBox('evidence', 'Based on Evidence', 'olive-text', 'We seek to understand the context and practices of schools, districts, school networks, authorizers, and communities through evidence-based processes.')
+                    +zoomBox('collaboration', 'Collaboration and learning', 'forest-text', 'We serve our partners best by collaborating and learning with them.')
+                    +zoomBox('diversity', 'Diversity, Equity and Inclusion', 'mango-text', 'Through our work, we advance diverse, equitable, and inclusive policies both within our organization and with our partners, in order to dismantle inequalities in school communities.')
+                    +zoomBox('effective-practices', 'Effective Practices', 'blue-text', 'We identify effective practices across the education landscape, and interpret and apply them in all aspects of our work.')
+
+            .values__content.d-none.d-md-block
+                .container.text-center(style="max-width:400px")
+                    mixin zoomBoxCopy(h2, color = undefined, h3 = undefined)
+                        .copy-value(class=h2.replace('-', '').replace(',', '').toLowerCase().split(' ')[0].toLowerCase())
+                            h2.text-uppercase(class=color)= h2
+                            p.mb-0= h3
+                    +zoomBoxCopy('Accountability', 'lime-text', 'We believe accountability for results is an essential component of every successful organization.')
+                    +zoomBoxCopy('Based on Evidence', 'olive-text', 'We seek to understand the context and practices of schools, districts, school networks, authorizers, and communities through evidence-based processes.')
+                    +zoomBoxCopy('Collaboration and learning', 'forest-text', 'We serve our partners best by collaborating and learning with them.')
+                    +zoomBoxCopy('Diversity, Equity and Inclusion', 'mango-text', 'Through our work, we advance diverse, equitable, and inclusive policies both within our organization and with our partners, in order to dismantle inequalities in school communities.')
+                    +zoomBoxCopy('Effective Practices', 'blue-text', 'We identify effective practices across the education landscape, and interpret and apply them in all aspects of our work.')
+
+        section.sec.company-history.forest-bg
+            .container
+                .heading.text-center
+                    .icon.mb-4
+                        img(src="images/history-icon.svg", alt="", width="64", height="54")
+                    h2.text-white.text-uppercase Company History
+                #timeline.time-line.mt-5
+                    .time-line__year.d-none.d-md-block
+                        ul.nav.justify-content-between
+                            -for( let year = 1998; year <= 2032; year += 2)
+                                li.text-white.opacity-50= year
+
+                    .time-line__year-bar.d-none.d-md-flex.mb-5
+                        .bar.mango-bg.active(data-year="first", style="width:36%")
+                        .bar.lime-bg(data-year="second", style="width:13.8%")
+                        .bar.blue-bg(data-year="third", style="width:14%")
+                        .bar.orange-bg(data-year="fourth", style="width:13%")
+                            span.arrow
+
+                    .time-line__content
+                        mixin copyTime(order, color, year, h3, p)
+                            .copy.mt-5(class= order)
+                                .heading.py-3.text-center.d-md-none.mb-4(class=color+'-bg')
+                                    h2.mb-0.text-white.lh-1= year
+                                h2.mb-0.d-none.d-md-block(class=color+'-text')= year
+                                h3= h3
+                                p !{p}
+
+                        - let timeOrder = ['first', 'second', 'third', 'fourth']
+                        - let timeColor = ['mango', 'lime', 'blue', 'orange']
+                        - let timeYear = ['1998-2010', '2010-2013', '2013-2020', '2020-2024']
+                        - let timeH3 = ['Founding and Early Years', 'Expansion and Growth', 'Innovation and Adaptation', 'Continued Commitment to Excellence']
+                        - let timeP = ['SchoolWorks was founded in 1998 by a group of passionate educators who shared a common vision for transforming education in alignment with evidence-based practices. Ownership was transitioned from original founder Ledyard McFadden to long-term President and employee <a href="#">Kim Perron</a> in January of 2019. <br><br> In its early years, SchoolWorks quickly gained recognition for its innovative approach to school reviews and its commitment to personalized support for educators. The company was initially contracted by charter school authorizers and departments of education to conduct renewal site visits and district and school reviews for accountability purposes. As demand for these services grew, SchoolWorks expanded its team of consultants and broadened its range of offerings to include formative school reviews, district and network level reviews, and a variety of specialized evaluations.', 'By 2010, SchoolWorks had established itself as a trusted partner for schools and student-serving organizations across the country. With a focus on data-driven decision-making, the company helped a growing body of schools and districts forge improvement efforts aligned to data-informed areas of need. Its portfolio of comprehensive school improvement services expanded to include diagnostic review, needs-aligned action planning, instructional supports, leadership coaching, and progress monitoring.', 'In response to growing need, SchoolWorks broadened and deepened its support partnerships with charter school authorizers, operators, and school developers. With the goal of providing high-quality, affordable technical assistance at scale, the company invested in an online learning platform and launched multiple asynchronous online professional development training courses. During this time, SchoolWorks also adapted its services to meet the unique challenges posed by the COVID-19 pandemic, providing schools with guidance and strategies for remote learning and hybrid instruction.', 'Today, SchoolWorks remains committed to its founding mission of empowering educational institutions to achieve their full potential. With a dedicated team of experienced consultants and a proven track record of success, the company continues to help educators use data-informed insights to develop actionable improvement initiatives. Looking ahead, SchoolWorks remains focused on innovation, collaboration, and lasting impact.']
+
+                        - for (let i = 0; i < 4; i++)
+                            +copyTime(timeOrder[i], timeColor[i], timeYear[i], timeH3[i], timeP[i])
+
+                    //- mixin copyTime(order, color, year, heading, paragraph)
+                    //-     .copy.mt-5(class=order)
+                    //-         .heading.py-3.text-center.d-md-none.mb-4(class=color + '-bg')
+                    //-             h2.mb-0.text-white.lh-1= year
+                    //-         h2.mb-0.d-none.d-md-block(class=color + '-text')= year
+                    //-         h3= heading
+                    //-         p !{paragraph}
+
+                    //- - const timeData = [
+                    //-     {
+                    //-         order: 'first',
+                    //-         color: 'mango',
+                    //-         year: '1998-2010',
+                    //-         heading: 'Founding and Early Years',
+                    //-         paragraph: `
+                    //-             SchoolWorks was founded in 1998 by a group of passionate educators who shared a common vision for transforming education in alignment with evidence-based practices. Ownership was transitioned from original founder Ledyard McFadden to long-term President and employee <a href="#">Kim Perron</a> in January of 2019. <br><br>
+                    //-             In its early years, SchoolWorks quickly gained recognition for its innovative approach to school reviews and its commitment to personalized support for educators. The company was initially contracted by charter school authorizers and departments of education to conduct renewal site visits and district and school reviews for accountability purposes. As demand for these services grew, SchoolWorks expanded its team of consultants and broadened its range of offerings to include formative school reviews, district and network level reviews, and a variety of specialized evaluations.
+                    //-         `
+                    //-     },
+                    //-     {
+                    //-         order: 'second',
+                    //-         color: 'lime',
+                    //-         year: '2010-2013',
+                    //-         heading: 'Expansion and Growth',
+                    //-         paragraph: `
+                    //-             By 2010, SchoolWorks had established itself as a trusted partner for schools and student-serving organizations across the country. With a focus on data-driven decision-making, the company helped a growing body of schools and districts forge improvement efforts aligned to data-informed areas of need. Its portfolio of comprehensive school improvement services expanded to include diagnostic review, needs-aligned action planning, instructional supports, leadership coaching, and progress monitoring.
+                    //-         `
+                    //-     },
+                    //-     {
+                    //-         order: 'third',
+                    //-         color: 'blue',
+                    //-         year: '2013-2020',
+                    //-         heading: 'Innovation and Adaptation',
+                    //-         paragraph: `
+                    //-             In response to growing need, SchoolWorks broadened and deepened its support partnerships with charter school authorizers, operators, and school developers. With the goal of providing high-quality, affordable technical assistance at scale, the company invested in an online learning platform and launched multiple asynchronous online professional development training courses. During this time, SchoolWorks also adapted its services to meet the unique challenges posed by the COVID-19 pandemic, providing schools with guidance and strategies for remote learning and hybrid instruction.
+                    //-         `
+                    //-     },
+                    //-     {
+                    //-         order: 'fourth',
+                    //-         color: 'orange',
+                    //-         year: '2020-2024',
+                    //-         heading: 'Continued Commitment to Excellence',
+                    //-         paragraph: `
+                    //-             Today, SchoolWorks remains committed to its founding mission of empowering educational institutions to achieve their full potential. With a dedicated team of experienced consultants and a proven track record of success, the company continues to help educators use data-informed insights to develop actionable improvement initiatives. Looking ahead, SchoolWorks remains focused on innovation, collaboration, and lasting impact.
+                    //-         `
+                    //-     }
+                    //- ]
+
+                    //- - for (const time of timeData)
+                    //-     +copyTime(time.order, time.color, time.year, time.heading, time.paragraph)
+
+        section.sec.partners.py-md-5.py-lg-6.bg-white
+            .container
+                h2.text-center Approved Provider Status
+                h3.p.text-center.mb-5 SchoolWorks is approved by several national, state, and district-level agencies.
+
+                .partners__slider.owl-carousel
+                    mixin item(img, h3, p)
+                        .item.text-center.d-flex.flex-column.align-items-center
+                            .img.mb-4.flex-grow-1.d-flex.align-items-end.justify-content-center
+                                img.img-fluid(src="images/"+img+".png", alt="")
+                            h3.fw-bold.mb-2= h3
+                            p= p
+                    +item('spp6', 'Women’s Business Enterprise National Council', 'SchoolWorks is certified by the Women’s Business Enterprise National Council as a Women’s Business Enterprise and a Woman-Owned Small Business.')
+                    +item('spp3', 'Colorado Department of Education', 'SchoolWorks is a pre-qualified service partner in the areas of District-level Strategic Planning, School Holistic Review, Improvement Planning, and School Implementation Support.')
+                    +item('spp7', 'Illinois State Board of Education', 'SchoolWorks is an approved IL-EMPOWER Learning Partner for both Curriculum and Instruction and Governance and Management.')
+                    +item('spp6', 'Women’s Business Enterprise National Council', 'SchoolWorks is certified by the Women’s Business Enterprise National Council as a Women’s Business Enterprise and a Woman-Owned Small Business.')
+
+        +connect
+
+        include pugIncludes/footer.pug
+        +footer()

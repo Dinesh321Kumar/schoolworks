@@ -1,0 +1,67 @@
+h1,
+.h1 {
+	font: 700 20px/1.5 $font;
+
+	@media (min-width: 768px) {
+		font-size: 34px;
+	}
+
+	@media (min-width: 992px) {
+		font-size: 46px;
+	}
+}
+
+h2,
+.h2 {
+	font: 900 20px/1.35 $font;
+
+	@media (min-width: 768px) {
+		font-size: 30px;
+	}
+
+	@media (min-width: 768px) {
+		font-size: 40px;
+	}
+}
+
+h3,
+.h3 {
+	font: 700 20px/1.35 $font;
+
+	@media (min-width: 768px) {
+		font-size: 24px;
+	}
+}
+
+h4,
+.h4 {
+	font: 800 18px/1.5 $font;
+
+	@media (min-width: 768px) {
+		font-size: 20px;
+	}
+}
+
+p,
+li,
+.p {
+	font: 16px/1.5 $font;
+
+	@media (min-width: 768px) {
+		font-size: 18px;
+	}
+
+	strong {
+		font-weight: 800;
+	}
+}
+
+p {
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+.fw-bold {
+	font-weight: 800 !important;
+}

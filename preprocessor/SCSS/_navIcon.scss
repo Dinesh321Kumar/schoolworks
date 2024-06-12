@@ -1,0 +1,39 @@
+.callnav {
+	bottom: 20px;
+	position: absolute;
+	right: 15px;
+
+	.line {
+		background-color: $grey;
+		border-radius: 50px;
+		display: block;
+		height: 3px;
+		transition: all 0.3s ease-in-out;
+		width: 24px;
+
+		+ .line {
+			margin-top: 5px;
+		}
+	}
+
+	&.is-active {
+		.line {
+			&:nth-child(1) {
+				transform: translateY(6px) rotate(45deg);
+			}
+
+			&:nth-child(2) {
+				opacity: 0;
+			}
+
+			&:nth-child(3) {
+				margin-top: 0;
+				transform: translateY(-5px) rotate(-45deg);
+			}
+		}
+	}
+
+	&:hover {
+		cursor: pointer;
+	}
+}

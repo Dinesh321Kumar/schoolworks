@@ -1,0 +1,143 @@
+.nav {
+	@media (max-width: 991px) {
+		border-bottom: 1px solid $grey;
+		border-top: 1px solid $grey;
+	}
+
+	li {
+		color: $grey;
+		font: 16px $font;
+		margin-block: 0.5rem;
+
+		@media (min-width: 992px) {
+			font-size: 13px;
+			margin-block: 0;
+			margin-right: 1.5rem;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+
+		@media (min-width: 992px) {
+			.link {
+				cursor: default;
+			}
+
+			.link,
+			a {
+				&:hover {
+					position: relative;
+
+					&:after {
+						background: $grey;
+						bottom: -1rem;
+						content: '';
+						height: 5px;
+						left: 0;
+						position: absolute;
+						width: 100%;
+						z-index: 10;
+					}
+				}
+			}
+
+			&.active {
+				> .link,
+				> a {
+					font-weight: 700;
+					position: relative;
+
+					&:after {
+						background: $grey;
+						bottom: -1rem;
+						content: '';
+						height: 5px;
+						left: 0;
+						position: absolute;
+						width: 100%;
+						z-index: 10;
+					}
+				}
+			}
+		}
+
+		&.has_nav {
+			position: relative;
+
+			.arrow {
+				height: 20px;
+				position: absolute;
+				right: 10px;
+				top: 0;
+				width: 20px;
+			}
+
+			.sub-nav {
+				border-color: rgba($grey, 0.3);
+				display: none;
+				background: rgba($grey, 0.1);
+
+				@media (min-width: 992px) {
+					backdrop-filter: blur(5px);
+					background: rgba(#fff, 0.9);
+					left: 0;
+					padding: 2rem 1rem 1rem;
+					position: absolute;
+					top: 100%;
+				}
+
+				li {
+					@media (min-width: 992px) {
+						font-size: 12px;
+						margin-bottom: 0.6rem;
+						margin-right: 0;
+						text-wrap: nowrap;
+					}
+
+					a {
+						@media (min-width: 992px) {
+							&:before {
+								color: transparent;
+								content: attr(title);
+								display: block;
+								font-weight: 700;
+								height: 0;
+								overflow: hidden;
+								visibility: hidden;
+							}
+
+							&.active {
+								font-weight: 700;
+							}
+
+							&:hover {
+								font-weight: 700;
+
+								&:after {
+									display: none;
+								}
+							}
+						}
+					}
+
+					&:last-child {
+						margin-bottom: 0;
+					}
+				}
+			}
+
+			@media (min-width: 992px) {
+				&:hover {
+					.sub-nav {
+						display: block;
+					}
+				}
+			}
+		}
+	}
+
+	a {
+		color: inherit;
+	}
+}

@@ -1,0 +1,81 @@
+
+- let siteBranch = 'SchoolWorks';
+- let pageName = 'About';
+- let currentName = 'Changemakers Grant';
+- let pageTitle = siteBranch + ' | ' + currentName
+
+include pugIncludes/pageHero.pug
+include pugIncludes/connect.pug
+
+doctype html
+html(lang="en")
+    include pugIncludes/head.pug
+    +head(pageTitle)
+
+    body
+        include pugIncludes/header.pug
+        +header()
+
+        +pageHero('changemakers', 'orange', currentName)
+
+        section.sec.content
+            .container
+                .row.justify-content-xl-between
+                    .col-md-9
+                        p #[strong Each quarter, SchoolWorks provides a $5,000 grant award to a team of educators seeking to advance student learning and well-being through an impact-focused initiative.] Grant funds may be used to support a broad range of activities including student wellness efforts, academic or enrichment programming, school supplies, goods or services for students in need, professional development, professional services, SchoolWorks online courses, and more.
+                        p Schools and organizations that serve students are eligible to apply. 
+
+                    .col-md-auto.d-none.d-md-block
+                        .side-links
+                            ul.nav.flex-column
+                                each clink, plink in { 'Changemakers Grant': 'orange', 'News & Events': 'mango', 'Our Team': 'olive', 'About': 'grey'}
+                                    li(class=clink+"-text")
+                                        a.text-decoration-none(href=plink.replace(/[\W_] /g, '').replaceAll(/ /g, "-").toLowerCase()+".html")= plink
+
+                .form-grant.mt-5
+                    h2.orange-text.mb-0 Grant Deadlines 
+                    p.mb-0 #[strong Opens] 3/1/2024 
+                    p.mb-0 #[strong Deadline] 4/30/2024 at 12:00 PM EST. 
+
+                    form.mt-5(action="")
+                        h2.orange-text Application Form
+
+                        mixin field(label, type, col='12')
+                            .mb-3(class=`col-md-${col}`)
+                                label.form-label.visually-hidden(for=`${label.replaceAll(' ')}`)= label
+                                input.form-control.rounded-0(id=`${label.replaceAll(' ')}`, type=`${type}`, placeholder=label)
+
+                        mixin message(label, col='12')
+                            .mb-3(class=`col-md-${col}`)
+                                label.form-label.visually-hidden(for=`${label.replaceAll(' ')}`)= label
+                                textarea.form-control.rounded-0(id=`${label.replaceAll(' ')}`, placeholder=label)
+
+                        label.form-label.fw-bold About You
+                        +field('Organization Name', 'text')
+                        +field('Organization Mailing Address', 'email')
+                        +field('Your First Name', 'text')
+                        +field('Your Last Name', 'text')
+                        +field('Your Title/Position', 'text')
+                        +field('Email Address', 'email')
+                        +field('Phone Number', 'number')
+                        +field('School/Organization Website Address', 'text')
+                        label.form-label.fw-bold.mt-4 Use of Funds
+                        p.helper Please provide a description of how the funds will be spent. You may attach a detailed title list if applicable, but it's not required at this point. If awarded, confirmation that funds were spent according to the project outline will be required.
+                        +message('','')
+                        label.form-label.fw-bold.mt-4 Your Story
+                        p.helper Please tell us why you believe in this project and its impact on your organization and the students ultimately served by your organization.
+                        +message('','')
+                        label.form-label.fw-bold.mt-4 Measurable Impact
+                        p.helper What are the measurable goals of your initiative?  What evidence will SchoolWorks be able to collect to demonstrate that the goals of the project have been attained?
+                        +message('','')
+                        label.form-label.fw-bold.mt-4 The Future
+                        p.helper If awarded, what might we see or experience on a real or virtual visit to your organization that might highlight the impact of the funding?
+                        +message('','')
+
+                        .col-12.mt-4.text-center.text-md-start
+                            button.cta.border-0.text-uppercase.text-white.mb-md-5.orange-bg SUBMIT
+
+        +connect
+
+        include pugIncludes/footer.pug
+        +footer()

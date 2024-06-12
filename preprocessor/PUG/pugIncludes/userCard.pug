@@ -1,0 +1,9 @@
+mixin userCard(col = 4, pic, h2, role, link = '#', color)
+    .mb-5.d-flex.justify-content-center(class=(col == 4 ? 'col-md-3' : 'col-md-4'))
+        .team__box.text-center.d-flex.flex-column.mx-auto.align-items-center
+            .img.mb-3.align-items-end.d-flex.justify-content-center.overflow-hidden.rounded-circle(class=color+"-bg")
+                img(src=`images/${pic}.png`, alt="")
+            .text.flex-grow-1.d-flex.flex-column.align-items-center.mb-2
+                h2.mb-0.fw-bold= h2
+                h3.text-uppercase= role
+            a.cta.d-inline-flex.text-decoration-none.text-uppercase.text-white.mt-auto(href= link, class=color+"-bg") FUll Bio

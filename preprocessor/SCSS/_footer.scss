@@ -1,0 +1,67 @@
+.footer {
+	background: $lime;
+	padding-block: 4rem 2rem;
+
+	.brand {
+		h2 {
+			font-size: 24px;
+			font-weight: 800;
+		}
+	}
+
+	.in_touch {
+		.sign_up {
+			border: 1px solid $grey;
+			color: $grey;
+			font: 800 12px/1 $font;
+			padding: 8px 10px;
+		}
+
+		.meet {
+			color: $grey;
+			font: 800 16px/1.5 $font;
+		}
+	}
+
+	.social {
+		li {
+			color: $grey;
+			font-size: 28px;
+			margin-right: 10px;
+
+			&:last-child {
+				margin-right: 0;
+			}
+		}
+	}
+
+	.links {
+		border-top: 1px solid $grey;
+
+		li {
+			font: 13px/1 $font;
+
+			&:after {
+				content: '|';
+				line-height: 1;
+				margin: 0 0.5rem;
+			}
+
+			&:last-child {
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
+
+	.copyright {
+		p {
+			font: 13px $font;
+		}
+	}
+
+	a {
+		color: inherit;
+	}
+}

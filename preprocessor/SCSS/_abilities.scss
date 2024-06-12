@@ -1,0 +1,56 @@
+.abilities {
+	margin-bottom: 4rem;
+	@media (min-width: 768px) {
+		margin-block: 8.5rem;
+	}
+
+	.box {
+		@media (min-width: 768px) {
+			height: 100%;
+		}
+
+		.icon {
+			width: 95px;
+			height: 85px;
+		}
+
+		h2 {
+			line-height: 1;
+		}
+
+		p {
+			font-size: 14px;
+			font-weight: 500;
+			max-width: 285px;
+
+			strong {
+				font-size: 18px;
+				font-weight: 800;
+			}
+		}
+
+		.bottom {
+			min-height: 70px;
+		}
+
+		.meta {
+			font: 800 14px/1 $font;
+		}
+
+		@each $color, $value in $colors {
+			&.#{'#{$color}'} {
+				h2 {
+					color: $value;
+				}
+
+				.cta {
+					background: $value;
+				}
+
+				.meta {
+					color: $value;
+				}
+			}
+		}
+	}
+}

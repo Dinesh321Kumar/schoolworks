@@ -1,0 +1,11 @@
+mixin abilityBox(color, img, h2, p, cta = undefined, ctaLink = undefined)
+    .box.d-flex.flex-column.align-items-center.text-center(class=color)
+        .icon.mb-4.d-flex.align-items-end.justify-content-center
+            img(src="images/"+img+"-icon.svg", alt="")
+        .copy.align-items-center.d-flex.flex-column.flex-grow-1
+            h2.text-uppercase.mb-3= h2
+            p.mb-0 !{p}
+        if cta
+            .bottom.d-flex.flex-column.mt-3
+                a.cta.text-white.text-decoration-none.text-uppercase.d-inline-flex.justify-content-center(href="#")= cta
+                a.meta.mt-3.text-decoration-none.text-uppercase(href="#")= ctaLink

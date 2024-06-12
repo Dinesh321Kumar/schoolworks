@@ -1,0 +1,10 @@
+.jumbo {
+	p {
+		color: #fff;
+		font-weight: 700;
+
+		@media (min-width: 768px) {
+			font-size: 22px;
+		}
+	}
+}

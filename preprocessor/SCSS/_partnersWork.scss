@@ -1,0 +1,104 @@
+.partners-work {
+	&__box {
+		.frame {
+			flex: 0 0 230px;
+
+			.img {
+				height: 232px;
+				width: 232px;
+
+				img {
+					height: 90%;
+					width: 90%;
+				}
+			}
+
+			.meta {
+				.name {
+					font-size: 20px;
+				}
+
+				.role {
+					font-size: 14px;
+				}
+			}
+		}
+
+		.tag {
+			font: 14px $font;
+			padding: 0.5rem 1rem;
+		}
+
+		.bar-quote {
+			position: relative;
+
+			.img-quote {
+				position: relative;
+				z-index: 1;
+			}
+
+			&:before {
+				content: '';
+				height: 1px;
+				left: 0;
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				width: 100%;
+			}
+		}
+
+		h2 {
+			font-size: 18px;
+			font-weight: 800;
+		}
+
+		.quote {
+			font-size: 18px;
+		}
+
+		.meta {
+			.name {
+				font-size: 18px;
+			}
+
+			.company {
+				font-size: 14px;
+			}
+		}
+
+		@each $color, $value in $colors {
+			&.#{'#{$color}'} {
+				.frame {
+					.img {
+						background: $value;
+					}
+
+					.meta {
+						.name {
+							color: $value;
+						}
+					}
+				}
+
+				.tag {
+					background: $value;
+				}
+
+				.bar-quote {
+					.img-quote {
+						svg {
+							path {
+								fill: $value;
+							}
+						}
+					}
+
+					&:before {
+						background: $value;
+					}
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,29 @@
+.hero {
+	&__img-wrap {
+		max-width: 1468px;
+	}
+
+	&__text {
+		left: 50%;
+		position: absolute;
+		top: 50%;
+		transform: translate(-50%, -50%);
+
+		h2 {
+			font: 18px $font;
+			@media (min-width: 768px) {
+				font-size: 46px;
+			}
+		}
+
+		a {
+			border: 1px solid #fff;
+			font: 800 10px/1 $font;
+			padding: 0.5rem 1rem;
+			@media (min-width: 768px) {
+				font-size: 12px;
+				padding: 0.8rem 2rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,30 @@
+mixin footer
+    #footer.footer
+        .container
+            .upper.align-items-center.d-flex.flex-column.flex-md-row.justify-content-between.text-center.text-md-start
+                .brand.mb-5
+                    a(href="index.html")
+                        img(src="images/logo.svg", alt="", height="30", width="186")
+                    h2.mt-3.mb-0 A National Education Consulting Provider
+                .in_touch.mb-5.d-flex.flex-column
+                    a.sign_up.mb-3.text-decoration-none.text-uppercase.d-inline-flex(href="#") Sign up for Newsletter
+                    a.meet.text-decoration-none(href="mailto:hello@schoolworks.org") hello@schoolworks.org
+            .bottom.align-items-center.d-inline-flex.flex-column.align-items-md-start
+                .social.mb-3
+                    ul.nav
+                        each social in ['instagram', 'facebook', 'twitter-x', 'linkedin', 'youtube']
+                            li
+                                a.text-decoration-none(href="#") #[i.bi(class=`bi-${social}`)]
+                .links.pt-3
+                    ul.nav.justify-content-center.justify-content-md-start.nav
+                        each link in ['Privacy Policy', 'Terms of Use', 'Accessibility', 'Clients', 'About Us', 'Blog', 'Contact Us']
+                            li.mb-3.mb-md-0
+                                a.text-decoration-none(href="#")= link
+                .copyright.mt-3
+                    p.mb-0 &copy;2024 SchoolWorks, LLC. All rights reserved.
+
+    script(src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js", integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz", crossorigin="anonymous")
+    //- script(src="js/scrollHeader.js")
+    script(src="https://code.jquery.com/jquery-3.7.1.min.js", integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=", crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js", integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==", crossorigin="anonymous", referrerpolicy="no-referrer")
+    script(src="js/app.js")
