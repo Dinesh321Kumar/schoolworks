@@ -1,3 +1,31 @@
 {header}
 {navigation}
+
+{exp:channel:entries channel="homepage" limit="1" dynamic="yes"}
+{if carousel_slide}
+<section class="hero">
+    <div class="carousel slide carousel-fade" id="homeSlider" data-bs-ride="carousel" data-bs-interval="4000">
+        <div class="carousel-inner">
+            {carousel_slide}
+            <div class="carousel-item active {carousel_slider:bg_color:label}">
+                {if carousel_slide:image != ""}
+                <div class="hero__img-wrap mx-auto"><img class="d-block w-100" src="{carousel_slide:image}" alt="..." /></div>
+                {/if}
+                <div class="hero__text container">
+                    {if carousel_slide:text != ""}
+                    <h2 class="text-white mb-2 mb-md-5">
+                        {carousel_slide:text}
+                    </h2>
+                    {/if}
+                    {if carousel_slide:cta_text != ""}
+                    <a class="cta text-white text-decoration-none text-uppercase d-inline-flex" href="#">{carousel_slide:cta_text}</a>
+                    {/if}
+                </div>
+            </div>
+            {/carousel_slide}
+        </div>
+    </div>
+</section>
+{/if}
+{/exp:channel:entries}
 {footer}
