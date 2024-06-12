@@ -1,0 +1,1166 @@
+{
+    "packages": [
+        {
+            "name": "bacon\/bacon-qr-code",
+            "version": "2.0.8",
+            "version_normalized": "2.0.8.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/Bacon\/BaconQrCode.git",
+                "reference": "8674e51bb65af933a5ffaf1c308a660387c35c22"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/Bacon\/BaconQrCode\/zipball\/8674e51bb65af933a5ffaf1c308a660387c35c22",
+                "reference": "8674e51bb65af933a5ffaf1c308a660387c35c22",
+                "shasum": ""
+            },
+            "require": {
+                "dasprid\/enum": "^1.0.3",
+                "ext-iconv": "*",
+                "php": "^7.1 || ^8.0"
+            },
+            "require-dev": {
+                "phly\/keep-a-changelog": "^2.1",
+                "phpunit\/phpunit": "^7 | ^8 | ^9",
+                "spatie\/phpunit-snapshot-assertions": "^4.2.9",
+                "squizlabs\/php_codesniffer": "^3.4"
+            },
+            "suggest": {
+                "ext-imagick": "to generate QR code images"
+            },
+            "time": "2022-12-07T17:46:57+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\BaconQrCode\\": "src\/"
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Scholzen 'DASPRiD'",
+                    "email": "mail@dasprids.de",
+                    "homepage": "https:\/\/dasprids.de\/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "BaconQrCode is a QR code generator for PHP.",
+            "homepage": "https:\/\/github.com\/Bacon\/BaconQrCode",
+            "support": {
+                "issues": "https:\/\/github.com\/Bacon\/BaconQrCode\/issues",
+                "source": "https:\/\/github.com\/Bacon\/BaconQrCode\/tree\/2.0.8"
+            },
+            "install-path": "..\/bacon\/bacon-qr-code"
+        },
+        {
+            "name": "bamarni\/composer-bin-plugin",
+            "version": "1.8.2",
+            "version_normalized": "1.8.2.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/bamarni\/composer-bin-plugin.git",
+                "reference": "92fd7b1e6e9cdae19b0d57369d8ad31a37b6a880"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/bamarni\/composer-bin-plugin\/zipball\/92fd7b1e6e9cdae19b0d57369d8ad31a37b6a880",
+                "reference": "92fd7b1e6e9cdae19b0d57369d8ad31a37b6a880",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^2.0",
+                "php": "^7.2.5 || ^8.0"
+            },
+            "require-dev": {
+                "composer\/composer": "^2.0",
+                "ext-json": "*",
+                "phpstan\/extension-installer": "^1.1",
+                "phpstan\/phpstan": "^1.8",
+                "phpstan\/phpstan-phpunit": "^1.1",
+                "phpunit\/phpunit": "^8.5 || ^9.5",
+                "symfony\/console": "^2.8.52 || ^3.4.35 || ^4.4 || ^5.0 || ^6.0",
+                "symfony\/finder": "^2.8.52 || ^3.4.35 || ^4.4 || ^5.0 || ^6.0",
+                "symfony\/process": "^2.8.52 || ^3.4.35 || ^4.4 || ^5.0 || ^6.0"
+            },
+            "time": "2022-10-31T08:38:03+00:00",
+            "type": "composer-plugin",
+            "extra": {
+                "class": "Bamarni\\Composer\\Bin\\BamarniBinPlugin"
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\Bamarni\\Composer\\Bin\\": "src"
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "MIT"
+            ],
+            "description": "No conflicts for your bin dependencies",
+            "keywords": [
+                "composer",
+                "conflict",
+                "dependency",
+                "executable",
+                "isolation",
+                "tool"
+            ],
+            "support": {
+                "issues": "https:\/\/github.com\/bamarni\/composer-bin-plugin\/issues",
+                "source": "https:\/\/github.com\/bamarni\/composer-bin-plugin\/tree\/1.8.2"
+            },
+            "install-path": "..\/bamarni\/composer-bin-plugin"
+        },
+        {
+            "name": "beberlei\/assert",
+            "version": "v3.2.2",
+            "version_normalized": "3.2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/beberlei\/assert.git",
+                "reference": "5547e7d03f8c6be121b8b9db6d6ed5a22ffdcb01"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/beberlei\/assert\/zipball\/5547e7d03f8c6be121b8b9db6d6ed5a22ffdcb01",
+                "reference": "5547e7d03f8c6be121b8b9db6d6ed5a22ffdcb01",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7"
+            },
+            "require-dev": {
+                "friendsofphp\/php-cs-fixer": "*",
+                "phpstan\/phpstan-shim": "*",
+                "phpunit\/phpunit": ">=6.0.0 <8"
+            },
+            "time": "2019-08-23T16:04:58+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "lib\/Assert\/functions.php"
+                ],
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\Assert\\": "lib\/Assert"
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Benjamin Eberlei",
+                    "email": "kontakt@beberlei.de",
+                    "role": "Lead Developer"
+                },
+                {
+                    "name": "Richard Quadling",
+                    "email": "rquadling@gmail.com",
+                    "role": "Collaborator"
+                }
+            ],
+            "description": "Thin assertion library for input validation in business models.",
+            "keywords": [
+                "assert",
+                "assertion",
+                "validation"
+            ],
+            "support": {
+                "issues": "https:\/\/github.com\/beberlei\/assert\/issues",
+                "source": "https:\/\/github.com\/beberlei\/assert\/tree\/v3.2.2"
+            },
+            "install-path": "..\/beberlei\/assert"
+        },
+        {
+            "name": "dasprid\/enum",
+            "version": "1.0.5",
+            "version_normalized": "1.0.5.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/DASPRiD\/Enum.git",
+                "reference": "6faf451159fb8ba4126b925ed2d78acfce0dc016"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/DASPRiD\/Enum\/zipball\/6faf451159fb8ba4126b925ed2d78acfce0dc016",
+                "reference": "6faf451159fb8ba4126b925ed2d78acfce0dc016",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1 <9.0"
+            },
+            "require-dev": {
+                "phpunit\/phpunit": "^7 | ^8 | ^9",
+                "squizlabs\/php_codesniffer": "*"
+            },
+            "time": "2023-08-25T16:18:39+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\DASPRiD\\Enum\\": "src\/"
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "BSD-2-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Ben Scholzen 'DASPRiD'",
+                    "email": "mail@dasprids.de",
+                    "homepage": "https:\/\/dasprids.de\/",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP 7.1 enum implementation",
+            "keywords": [
+                "enum",
+                "map"
+            ],
+            "support": {
+                "issues": "https:\/\/github.com\/DASPRiD\/Enum\/issues",
+                "source": "https:\/\/github.com\/DASPRiD\/Enum\/tree\/1.0.5"
+            },
+            "install-path": "..\/dasprid\/enum"
+        },
+        {
+            "name": "expressionengine\/flysystem-cached-adapter",
+            "version": "1.1.1",
+            "version_normalized": "1.1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/ExpressionEngine\/flysystem-cached-adapter.git",
+                "reference": "42886956ae37207a17d75a079e9fddeaa75a5fb3"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/ExpressionEngine\/flysystem-cached-adapter\/zipball\/42886956ae37207a17d75a079e9fddeaa75a5fb3",
+                "reference": "42886956ae37207a17d75a079e9fddeaa75a5fb3",
+                "shasum": ""
+            },
+            "require": {
+                "league\/flysystem": "~1.0",
+                "psr\/cache": "^1.0.0"
+            },
+            "require-dev": {
+                "mockery\/mockery": "~0.9",
+                "phpspec\/phpspec": "^3.4",
+                "phpunit\/phpunit": "^5.7",
+                "predis\/predis": "~1.0",
+                "tedivm\/stash": "~0.12"
+            },
+            "suggest": {
+                "ext-phpredis": "Pure C implemented extension for PHP"
+            },
+            "time": "2023-01-05T21:43:19+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\League\\Flysystem\\Cached\\": "src\/"
+                }
+            },
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "frankdejonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "An adapter decorator to enable meta-data caching.",
+            "support": {
+                "source": "https:\/\/github.com\/ExpressionEngine\/flysystem-cached-adapter\/tree\/1.1.1"
+            },
+            "install-path": "..\/expressionengine\/flysystem-cached-adapter"
+        },
+        {
+            "name": "league\/flysystem",
+            "version": "1.1.10",
+            "version_normalized": "1.1.10.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/thephpleague\/flysystem.git",
+                "reference": "3239285c825c152bcc315fe0e87d6b55f5972ed1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/thephpleague\/flysystem\/zipball\/3239285c825c152bcc315fe0e87d6b55f5972ed1",
+                "reference": "3239285c825c152bcc315fe0e87d6b55f5972ed1",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "league\/mime-type-detection": "^1.3",
+                "php": "^7.2.5 || ^8.0"
+            },
+            "conflict": {
+                "league\/flysystem-sftp": "<1.0.6"
+            },
+            "require-dev": {
+                "phpspec\/prophecy": "^1.11.1",
+                "phpunit\/phpunit": "^8.5.8"
+            },
+            "suggest": {
+                "ext-ftp": "Allows you to use FTP server storage",
+                "ext-openssl": "Allows you to use FTPS server storage",
+                "league\/flysystem-aws-s3-v2": "Allows you to use S3 storage with AWS SDK v2",
+                "league\/flysystem-aws-s3-v3": "Allows you to use S3 storage with AWS SDK v3",
+                "league\/flysystem-azure": "Allows you to use Windows Azure Blob storage",
+                "league\/flysystem-cached-adapter": "Flysystem adapter decorator for metadata caching",
+                "league\/flysystem-eventable-filesystem": "Allows you to use EventableFilesystem",
+                "league\/flysystem-rackspace": "Allows you to use Rackspace Cloud Files",
+                "league\/flysystem-sftp": "Allows you to use SFTP server storage via phpseclib",
+                "league\/flysystem-webdav": "Allows you to use WebDAV storage",
+                "league\/flysystem-ziparchive": "Allows you to use ZipArchive adapter",
+                "spatie\/flysystem-dropbox": "Allows you to use Dropbox storage",
+                "srmklive\/flysystem-dropbox-v2": "Allows you to use Dropbox storage for PHP 5 applications"
+            },
+            "time": "2022-10-04T09:16:37+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.1-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\League\\Flysystem\\": "src\/"
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frenky.net"
+                }
+            ],
+            "description": "Filesystem abstraction: Many filesystems, one API.",
+            "keywords": [
+                "Cloud Files",
+                "WebDAV",
+                "abstraction",
+                "aws",
+                "cloud",
+                "copy.com",
+                "dropbox",
+                "file systems",
+                "files",
+                "filesystem",
+                "filesystems",
+                "ftp",
+                "rackspace",
+                "remote",
+                "s3",
+                "sftp",
+                "storage"
+            ],
+            "support": {
+                "issues": "https:\/\/github.com\/thephpleague\/flysystem\/issues",
+                "source": "https:\/\/github.com\/thephpleague\/flysystem\/tree\/1.1.10"
+            },
+            "funding": [
+                {
+                    "url": "https:\/\/offset.earth\/frankdejonge",
+                    "type": "other"
+                }
+            ],
+            "install-path": "..\/league\/flysystem"
+        },
+        {
+            "name": "league\/mime-type-detection",
+            "version": "1.12.0",
+            "version_normalized": "1.12.0.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/thephpleague\/mime-type-detection.git",
+                "reference": "c7f2872fb273bf493811473dafc88d60ae829f48"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/thephpleague\/mime-type-detection\/zipball\/c7f2872fb273bf493811473dafc88d60ae829f48",
+                "reference": "c7f2872fb273bf493811473dafc88d60ae829f48",
+                "shasum": ""
+            },
+            "require": {
+                "ext-fileinfo": "*",
+                "php": "^7.2 || ^8.0"
+            },
+            "require-dev": {
+                "friendsofphp\/php-cs-fixer": "^3.2",
+                "phpstan\/phpstan": "^0.12.68",
+                "phpunit\/phpunit": "^8.5.8 || ^9.3"
+            },
+            "time": "2023-08-03T07:14:11+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\League\\MimeTypeDetection\\": "src"
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Frank de Jonge",
+                    "email": "info@frankdejonge.nl"
+                }
+            ],
+            "description": "Mime-type detection for Flysystem",
+            "support": {
+                "issues": "https:\/\/github.com\/thephpleague\/mime-type-detection\/issues",
+                "source": "https:\/\/github.com\/thephpleague\/mime-type-detection\/tree\/1.12.0"
+            },
+            "funding": [
+                {
+                    "url": "https:\/\/github.com\/frankdejonge",
+                    "type": "github"
+                },
+                {
+                    "url": "https:\/\/tidelift.com\/funding\/github\/packagist\/league\/flysystem",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "..\/league\/mime-type-detection"
+        },
+        {
+            "name": "mlocati\/ip-lib",
+            "version": "1.18.0",
+            "version_normalized": "1.18.0.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/mlocati\/ip-lib.git",
+                "reference": "c77bd0b1f3e3956c7e9661e75cb1f54ed67d95d2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/mlocati\/ip-lib\/zipball\/c77bd0b1f3e3956c7e9661e75cb1f54ed67d95d2",
+                "reference": "c77bd0b1f3e3956c7e9661e75cb1f54ed67d95d2",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.3"
+            },
+            "require-dev": {
+                "ext-pdo_sqlite": "*",
+                "phpunit\/phpunit": "^4.8 || ^5.7 || ^6.5 || ^7.5 || ^8.5 || ^9.5"
+            },
+            "time": "2022-01-13T18:05:33+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\IPLib\\": "src\/"
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Michele Locati",
+                    "email": "mlocati@gmail.com",
+                    "homepage": "https:\/\/github.com\/mlocati",
+                    "role": "Author"
+                }
+            ],
+            "description": "Handle IPv4, IPv6 addresses and ranges",
+            "homepage": "https:\/\/github.com\/mlocati\/ip-lib",
+            "keywords": [
+                "IP",
+                "address",
+                "addresses",
+                "ipv4",
+                "ipv6",
+                "manage",
+                "managing",
+                "matching",
+                "network",
+                "networking",
+                "range",
+                "subnet"
+            ],
+            "support": {
+                "issues": "https:\/\/github.com\/mlocati\/ip-lib\/issues",
+                "source": "https:\/\/github.com\/mlocati\/ip-lib\/tree\/1.18.0"
+            },
+            "funding": [
+                {
+                    "url": "https:\/\/github.com\/sponsors\/mlocati",
+                    "type": "github"
+                },
+                {
+                    "url": "https:\/\/paypal.me\/mlocati",
+                    "type": "other"
+                }
+            ],
+            "install-path": "..\/mlocati\/ip-lib"
+        },
+        {
+            "name": "paragonie\/constant_time_encoding",
+            "version": "v2.6.3",
+            "version_normalized": "2.6.3.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/paragonie\/constant_time_encoding.git",
+                "reference": "58c3f47f650c94ec05a151692652a868995d2938"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/paragonie\/constant_time_encoding\/zipball\/58c3f47f650c94ec05a151692652a868995d2938",
+                "reference": "58c3f47f650c94ec05a151692652a868995d2938",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7|^8"
+            },
+            "require-dev": {
+                "phpunit\/phpunit": "^6|^7|^8|^9",
+                "vimeo\/psalm": "^1|^2|^3|^4"
+            },
+            "time": "2022-06-14T06:56:20+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\ParagonIE\\ConstantTime\\": "src\/"
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paragon Initiative Enterprises",
+                    "email": "security@paragonie.com",
+                    "homepage": "https:\/\/paragonie.com",
+                    "role": "Maintainer"
+                },
+                {
+                    "name": "Steve 'Sc00bz' Thomas",
+                    "email": "steve@tobtu.com",
+                    "homepage": "https:\/\/www.tobtu.com",
+                    "role": "Original Developer"
+                }
+            ],
+            "description": "Constant-time Implementations of RFC 4648 Encoding (Base-64, Base-32, Base-16)",
+            "keywords": [
+                "base16",
+                "base32",
+                "base32_decode",
+                "base32_encode",
+                "base64",
+                "base64_decode",
+                "base64_encode",
+                "bin2hex",
+                "encoding",
+                "hex",
+                "hex2bin",
+                "rfc4648"
+            ],
+            "support": {
+                "email": "info@paragonie.com",
+                "issues": "https:\/\/github.com\/paragonie\/constant_time_encoding\/issues",
+                "source": "https:\/\/github.com\/paragonie\/constant_time_encoding"
+            },
+            "install-path": "..\/paragonie\/constant_time_encoding"
+        },
+        {
+            "name": "phpoption\/phpoption",
+            "version": "1.9.1",
+            "version_normalized": "1.9.1.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/schmittjoh\/php-option.git",
+                "reference": "dd3a383e599f49777d8b628dadbb90cae435b87e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/schmittjoh\/php-option\/zipball\/dd3a383e599f49777d8b628dadbb90cae435b87e",
+                "reference": "dd3a383e599f49777d8b628dadbb90cae435b87e",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^7.2.5 || ^8.0"
+            },
+            "require-dev": {
+                "bamarni\/composer-bin-plugin": "^1.8.2",
+                "phpunit\/phpunit": "^8.5.32 || ^9.6.3 || ^10.0.12"
+            },
+            "time": "2023-02-25T19:38:58+00:00",
+            "type": "library",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": true,
+                    "forward-command": true
+                },
+                "branch-alias": {
+                    "dev-master": "1.9-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\PhpOption\\": "src\/PhpOption\/"
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "authors": [
+                {
+                    "name": "Johannes M. Schmitt",
+                    "email": "schmittjoh@gmail.com",
+                    "homepage": "https:\/\/github.com\/schmittjoh"
+                },
+                {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https:\/\/github.com\/GrahamCampbell"
+                }
+            ],
+            "description": "Option Type for PHP",
+            "keywords": [
+                "language",
+                "option",
+                "php",
+                "type"
+            ],
+            "support": {
+                "issues": "https:\/\/github.com\/schmittjoh\/php-option\/issues",
+                "source": "https:\/\/github.com\/schmittjoh\/php-option\/tree\/1.9.1"
+            },
+            "funding": [
+                {
+                    "url": "https:\/\/github.com\/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https:\/\/tidelift.com\/funding\/github\/packagist\/phpoption\/phpoption",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "..\/phpoption\/phpoption"
+        },
+        {
+            "name": "psr\/cache",
+            "version": "1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/php-fig\/cache.git",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/php-fig\/cache\/zipball\/d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "reference": "d11b50ad223250cf17b86e38383413f5a6764bf8",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "time": "2016-08-06T20:24:11+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "1.0.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\Psr\\Cache\\": "src\/"
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "PHP-FIG",
+                    "homepage": "http:\/\/www.php-fig.org\/"
+                }
+            ],
+            "description": "Common interface for caching libraries",
+            "keywords": [
+                "cache",
+                "psr",
+                "psr-6"
+            ],
+            "support": {
+                "source": "https:\/\/github.com\/php-fig\/cache\/tree\/master"
+            },
+            "install-path": "..\/psr\/cache"
+        },
+        {
+            "name": "sabberworm\/php-css-parser",
+            "version": "8.4.0",
+            "version_normalized": "8.4.0.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/sabberworm\/PHP-CSS-Parser.git",
+                "reference": "e41d2140031d533348b2192a83f02d8dd8a71d30"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/sabberworm\/PHP-CSS-Parser\/zipball\/e41d2140031d533348b2192a83f02d8dd8a71d30",
+                "reference": "e41d2140031d533348b2192a83f02d8dd8a71d30",
+                "shasum": ""
+            },
+            "require": {
+                "ext-iconv": "*",
+                "php": ">=5.6.20"
+            },
+            "require-dev": {
+                "codacy\/coverage": "^1.4",
+                "phpunit\/phpunit": "^4.8.36"
+            },
+            "suggest": {
+                "ext-mbstring": "for parsing UTF-8 CSS"
+            },
+            "time": "2021-12-11T13:40:54+00:00",
+            "type": "library",
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\Sabberworm\\CSS\\": "src\/"
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raphael Schweikert"
+                }
+            ],
+            "description": "Parser for CSS Files written in PHP",
+            "homepage": "https:\/\/www.sabberworm.com\/blog\/2010\/6\/10\/php-css-parser",
+            "keywords": [
+                "css",
+                "parser",
+                "stylesheet"
+            ],
+            "support": {
+                "issues": "https:\/\/github.com\/sabberworm\/PHP-CSS-Parser\/issues",
+                "source": "https:\/\/github.com\/sabberworm\/PHP-CSS-Parser\/tree\/8.4.0"
+            },
+            "install-path": "..\/sabberworm\/php-css-parser"
+        },
+        {
+            "name": "spomky-labs\/otphp",
+            "version": "v10.0.3",
+            "version_normalized": "10.0.3.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/Spomky-Labs\/otphp.git",
+                "reference": "9784d9f7c790eed26e102d6c78f12c754036c366"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/Spomky-Labs\/otphp\/zipball\/9784d9f7c790eed26e102d6c78f12c754036c366",
+                "reference": "9784d9f7c790eed26e102d6c78f12c754036c366",
+                "shasum": ""
+            },
+            "require": {
+                "beberlei\/assert": "^3.0",
+                "ext-mbstring": "*",
+                "paragonie\/constant_time_encoding": "^2.0",
+                "php": "^7.2|^8.0",
+                "thecodingmachine\/safe": "^0.1.14|^1.0|^2.0"
+            },
+            "require-dev": {
+                "php-coveralls\/php-coveralls": "^2.0",
+                "phpstan\/phpstan": "^0.12",
+                "phpstan\/phpstan-beberlei-assert": "^0.12",
+                "phpstan\/phpstan-deprecation-rules": "^0.12",
+                "phpstan\/phpstan-phpunit": "^0.12",
+                "phpstan\/phpstan-strict-rules": "^0.12",
+                "phpunit\/phpunit": "^8.0",
+                "thecodingmachine\/phpstan-safe-rule": "^1.0 || ^2.0"
+            },
+            "time": "2022-03-17T08:00:35+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "v10.0": "10.0.x-dev",
+                    "v9.0": "9.0.x-dev",
+                    "v8.3": "8.3.x-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\OTPHP\\": "src\/"
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Florent Morselli",
+                    "homepage": "https:\/\/github.com\/Spomky"
+                },
+                {
+                    "name": "All contributors",
+                    "homepage": "https:\/\/github.com\/Spomky-Labs\/otphp\/contributors"
+                }
+            ],
+            "description": "A PHP library for generating one time passwords according to RFC 4226 (HOTP Algorithm) and the RFC 6238 (TOTP Algorithm) and compatible with Google Authenticator",
+            "homepage": "https:\/\/github.com\/Spomky-Labs\/otphp",
+            "keywords": [
+                "FreeOTP",
+                "RFC 4226",
+                "RFC 6238",
+                "google authenticator",
+                "hotp",
+                "otp",
+                "totp"
+            ],
+            "support": {
+                "issues": "https:\/\/github.com\/Spomky-Labs\/otphp\/issues",
+                "source": "https:\/\/github.com\/Spomky-Labs\/otphp\/tree\/v10.0.3"
+            },
+            "install-path": "..\/spomky-labs\/otphp"
+        },
+        {
+            "name": "symfony\/polyfill-ctype",
+            "version": "v1.28.0",
+            "version_normalized": "1.28.0.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/symfony\/polyfill-ctype.git",
+                "reference": "ea208ce43cbb04af6867b4fdddb1bdbf84cc28cb"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/symfony\/polyfill-ctype\/zipball\/ea208ce43cbb04af6867b4fdddb1bdbf84cc28cb",
+                "reference": "ea208ce43cbb04af6867b4fdddb1bdbf84cc28cb",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.1"
+            },
+            "provide": {
+                "ext-ctype": "*"
+            },
+            "suggest": {
+                "ext-ctype": "For best performance"
+            },
+            "time": "2023-01-26T09:26:14+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-main": "1.28-dev"
+                },
+                "thanks": {
+                    "name": "symfony\/polyfill",
+                    "url": "https:\/\/github.com\/symfony\/polyfill"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "bootstrap.php"
+                ],
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\Symfony\\Polyfill\\Ctype\\": ""
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gert de Pagter",
+                    "email": "BackEndTea@gmail.com"
+                },
+                {
+                    "name": "Symfony Community",
+                    "homepage": "https:\/\/symfony.com\/contributors"
+                }
+            ],
+            "description": "Symfony polyfill for ctype functions",
+            "homepage": "https:\/\/symfony.com",
+            "keywords": [
+                "compatibility",
+                "ctype",
+                "polyfill",
+                "portable"
+            ],
+            "support": {
+                "source": "https:\/\/github.com\/symfony\/polyfill-ctype\/tree\/v1.28.0"
+            },
+            "funding": [
+                {
+                    "url": "https:\/\/symfony.com\/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https:\/\/github.com\/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https:\/\/tidelift.com\/funding\/github\/packagist\/symfony\/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "..\/symfony\/polyfill-ctype"
+        },
+        {
+            "name": "thecodingmachine\/safe",
+            "version": "v1.3.3",
+            "version_normalized": "1.3.3.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/thecodingmachine\/safe.git",
+                "reference": "a8ab0876305a4cdaef31b2350fcb9811b5608dbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/thecodingmachine\/safe\/zipball\/a8ab0876305a4cdaef31b2350fcb9811b5608dbc",
+                "reference": "a8ab0876305a4cdaef31b2350fcb9811b5608dbc",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.2"
+            },
+            "require-dev": {
+                "phpstan\/phpstan": "^0.12",
+                "squizlabs\/php_codesniffer": "^3.2",
+                "thecodingmachine\/phpstan-strict-rules": "^0.12"
+            },
+            "time": "2020-10-28T17:51:34+00:00",
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "0.1-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "files": [
+                    "deprecated\/apc.php",
+                    "deprecated\/libevent.php",
+                    "deprecated\/mssql.php",
+                    "deprecated\/stats.php",
+                    "lib\/special_cases.php",
+                    "generated\/apache.php",
+                    "generated\/apcu.php",
+                    "generated\/array.php",
+                    "generated\/bzip2.php",
+                    "generated\/calendar.php",
+                    "generated\/classobj.php",
+                    "generated\/com.php",
+                    "generated\/cubrid.php",
+                    "generated\/curl.php",
+                    "generated\/datetime.php",
+                    "generated\/dir.php",
+                    "generated\/eio.php",
+                    "generated\/errorfunc.php",
+                    "generated\/exec.php",
+                    "generated\/fileinfo.php",
+                    "generated\/filesystem.php",
+                    "generated\/filter.php",
+                    "generated\/fpm.php",
+                    "generated\/ftp.php",
+                    "generated\/funchand.php",
+                    "generated\/gmp.php",
+                    "generated\/gnupg.php",
+                    "generated\/hash.php",
+                    "generated\/ibase.php",
+                    "generated\/ibmDb2.php",
+                    "generated\/iconv.php",
+                    "generated\/image.php",
+                    "generated\/imap.php",
+                    "generated\/info.php",
+                    "generated\/ingres-ii.php",
+                    "generated\/inotify.php",
+                    "generated\/json.php",
+                    "generated\/ldap.php",
+                    "generated\/libxml.php",
+                    "generated\/lzf.php",
+                    "generated\/mailparse.php",
+                    "generated\/mbstring.php",
+                    "generated\/misc.php",
+                    "generated\/msql.php",
+                    "generated\/mysql.php",
+                    "generated\/mysqli.php",
+                    "generated\/mysqlndMs.php",
+                    "generated\/mysqlndQc.php",
+                    "generated\/network.php",
+                    "generated\/oci8.php",
+                    "generated\/opcache.php",
+                    "generated\/openssl.php",
+                    "generated\/outcontrol.php",
+                    "generated\/password.php",
+                    "generated\/pcntl.php",
+                    "generated\/pcre.php",
+                    "generated\/pdf.php",
+                    "generated\/pgsql.php",
+                    "generated\/posix.php",
+                    "generated\/ps.php",
+                    "generated\/pspell.php",
+                    "generated\/readline.php",
+                    "generated\/rpminfo.php",
+                    "generated\/rrd.php",
+                    "generated\/sem.php",
+                    "generated\/session.php",
+                    "generated\/shmop.php",
+                    "generated\/simplexml.php",
+                    "generated\/sockets.php",
+                    "generated\/sodium.php",
+                    "generated\/solr.php",
+                    "generated\/spl.php",
+                    "generated\/sqlsrv.php",
+                    "generated\/ssdeep.php",
+                    "generated\/ssh2.php",
+                    "generated\/stream.php",
+                    "generated\/strings.php",
+                    "generated\/swoole.php",
+                    "generated\/uodbc.php",
+                    "generated\/uopz.php",
+                    "generated\/url.php",
+                    "generated\/var.php",
+                    "generated\/xdiff.php",
+                    "generated\/xml.php",
+                    "generated\/xmlrpc.php",
+                    "generated\/yaml.php",
+                    "generated\/yaz.php",
+                    "generated\/zip.php",
+                    "generated\/zlib.php"
+                ],
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\Safe\\": [
+                        "lib\/",
+                        "deprecated\/",
+                        "generated\/"
+                    ]
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "MIT"
+            ],
+            "description": "PHP core functions that throw exceptions instead of returning FALSE on error",
+            "support": {
+                "issues": "https:\/\/github.com\/thecodingmachine\/safe\/issues",
+                "source": "https:\/\/github.com\/thecodingmachine\/safe\/tree\/v1.3.3"
+            },
+            "install-path": "..\/thecodingmachine\/safe"
+        },
+        {
+            "name": "vlucas\/phpdotenv",
+            "version": "v4.3.0",
+            "version_normalized": "4.3.0.0",
+            "source": {
+                "type": "git",
+                "url": "https:\/\/github.com\/vlucas\/phpdotenv.git",
+                "reference": "67a491df68208bef8c37092db11fa3885008efcf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https:\/\/api.github.com\/repos\/vlucas\/phpdotenv\/zipball\/67a491df68208bef8c37092db11fa3885008efcf",
+                "reference": "67a491df68208bef8c37092db11fa3885008efcf",
+                "shasum": ""
+            },
+            "require": {
+                "php": "^5.5.9 || ^7.0 || ^8.0",
+                "phpoption\/phpoption": "^1.7.3",
+                "symfony\/polyfill-ctype": "^1.17"
+            },
+            "require-dev": {
+                "bamarni\/composer-bin-plugin": "^1.4.1",
+                "ext-filter": "*",
+                "ext-pcre": "*",
+                "phpunit\/phpunit": "^4.8.36 || ^5.7.27 || ^6.5.14 || ^7.5.20 || ^8.5.30"
+            },
+            "suggest": {
+                "ext-filter": "Required to use the boolean validator.",
+                "ext-pcre": "Required to use most of the library."
+            },
+            "time": "2022-10-16T00:51:09+00:00",
+            "type": "library",
+            "extra": {
+                "bamarni-bin": {
+                    "bin-links": true,
+                    "forward-command": true
+                },
+                "branch-alias": {
+                    "dev-master": "4.3-dev"
+                }
+            },
+            "installation-source": "dist",
+            "autoload": {
+                "psr-4": {
+                    "ExpressionEngine\\Dependency\\Dotenv\\": "src\/"
+                }
+            },
+            "notification-url": "https:\/\/packagist.org\/downloads\/",
+            "license": [
+                "BSD-3-Clause"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "hello@gjcampbell.co.uk",
+                    "homepage": "https:\/\/github.com\/GrahamCampbell"
+                },
+                {
+                    "name": "Vance Lucas",
+                    "email": "vance@vancelucas.com",
+                    "homepage": "https:\/\/github.com\/vlucas"
+                }
+            ],
+            "description": "Loads environment variables from `.env` to `getenv()`, `$_ENV` and `$_SERVER` automagically.",
+            "keywords": [
+                "dotenv",
+                "env",
+                "environment"
+            ],
+            "support": {
+                "issues": "https:\/\/github.com\/vlucas\/phpdotenv\/issues",
+                "source": "https:\/\/github.com\/vlucas\/phpdotenv\/tree\/v4.3.0"
+            },
+            "funding": [
+                {
+                    "url": "https:\/\/github.com\/GrahamCampbell",
+                    "type": "github"
+                },
+                {
+                    "url": "https:\/\/tidelift.com\/funding\/github\/packagist\/vlucas\/phpdotenv",
+                    "type": "tidelift"
+                }
+            ],
+            "install-path": "..\/vlucas\/phpdotenv"
+        }
+    ],
+    "dev": true,
+    "dev-package-names": []
+}
